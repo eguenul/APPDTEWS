@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jax-ws xmlns="http://www.netbeans.org/ns/jax-ws/1">
+  <services>
+    <service name="sendDTEWS">
+      <implementation-class>appdtews.services.sendDTEWS</implementation-class>
+    </service>
+    <service name="printDTEWS">
+      <implementation-class>appdtews.services.printDTEWS</implementation-class>
+    </service>
+    <service name="boletaWS">
+      <implementation-class>appdtews.services.boletaWS</implementation-class>
+    </service>
+    <service name="libroBoletaWS">
+      <implementation-class>appdtews.services.libroBoletaWS</implementation-class>
+    </service>
+    <service name="printBOLWS">
+      <implementation-class>appdtews.services.printBOLWS</implementation-class>
+    </service>
+  </services>
+  <clients/>
+  <jsr109>false</jsr109>
+</jax-ws>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <endpoints version="2.0" xmlns="http://java.sun.com/xml/ns/jax-ws/ri/runtime">
   <endpoint implementation="appdtews.services.sendDTEWS" name="sendDTEWS" url-pattern="/sendDTEWS"/>
-  <endpoint implementation="appdtews.services.printDTEWS" name="printDTEWS" url-pattern="/printDTEWS"/>
-  <endpoint implementation="appdtews.services.boletaWS" name="boletaWS" url-pattern="/boletaWS"/>
-  <endpoint implementation="appdtews.services.libroBoletaWS" name="libroBoletaWS" url-pattern="/libroBoletaWS"/>
-  <endpoint implementation="appdtews.services.printBOLWS" name="printBOLWS" url-pattern="/printBOLWS"/>
+  <endpoint implementation="appdtews.services.getDTEPDFWS" name="getDTEPDFWS" url-pattern="/getDTEPDFWS"/>
+  <endpoint implementation="appdtews.services.consultaDTEWS" name="consultaDTEWS" url-pattern="/consultaDTEWS"/>
+  <endpoint implementation="appdtews.services.LibroBoletaWS" name="LibroBoletaWS" url-pattern="/LibroBoletaWS"/>
+  <endpoint implementation="appdtews.services.ConsumoFolioWS" name="ConsumoFolioWS" url-pattern="/ConsumoFolioWS"/>
 </endpoints>

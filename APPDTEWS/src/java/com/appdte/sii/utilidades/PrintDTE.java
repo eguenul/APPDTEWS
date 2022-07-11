@@ -37,7 +37,7 @@ public PrintDTE(){
     
     public void printDTE(String rutemisor,String foliodte, String codsii) throws Exception {
 
-        ConfigClass objConfig = new ConfigClass();
+        ConfigAppDTE objConfig = new ConfigAppDTE();
       
        String auxrutemisor = rutemisor;
        

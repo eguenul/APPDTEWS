@@ -6,7 +6,7 @@
 package com.appboleta.sii;
 
 import com.appdte.models.DteModel;
-import com.appdte.sii.utilidades.ConfigClass;
+import com.appdte.sii.utilidades.ConfigAppDTE;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -47,7 +47,7 @@ public class EnvioBOLETA {
     }
     
     public void generaEnvio(DteModel objdte,String nombredte,String pathdte,String rutusuario) throws ParserConfigurationException, FileNotFoundException, IOException, SAXException, TransformerConfigurationException, TransformerException{
-       ConfigClass objconfig = new ConfigClass();
+       ConfigAppDTE objconfig = new ConfigAppDTE();
        	DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
 	DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
         this.doc = docBuilder.newDocument();

@@ -1,5 +1,6 @@
 package com.appdte.sii.cl;
 
+import com.appdte.sii.utilidades.ConfigAppDTE;
 import java.io.FileInputStream;
 import java.io.StringReader;
 import java.io.StringWriter;
@@ -36,7 +37,7 @@ import org.xml.sax.InputSource;
 public class SignToken {
 
     public StringWriter signToken(StringWriter objectxml, String pathcertificado, String clave) throws Exception {
-       
+       ConfigAppDTE objConfigAppDTE = new ConfigAppDTE();
    
         /* CREO LOS ELEMENTOS DE FIRMA */     
         // Create a DOM XMLSignatureFactory that will be used to
@@ -65,7 +66,7 @@ public class SignToken {
 
         /* instancio el certificado digital */
         KeyStore p12 = KeyStore.getInstance("pkcs12");
-        p12.load(new FileInputStream(pathcertificado), clave.toCharArray());
+        p12.load(new FileInputStream(objConfigAppDTE.getPathcert()  +pathcertificado), clave.toCharArray());
         Enumeration e = p12.aliases();
         String alias = (String) e.nextElement();
         System.out.println("Alias certifikata:" + alias);

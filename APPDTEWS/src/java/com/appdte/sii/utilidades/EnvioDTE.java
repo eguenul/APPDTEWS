@@ -41,7 +41,7 @@ public class EnvioDTE {
     
 
    public void generaEnvio(DteModel objdte,String nombredte,String pathdte,String rutusuario) throws ParserConfigurationException, FileNotFoundException, IOException, SAXException, TransformerConfigurationException, TransformerException{
-       ConfigClass objconfig = new ConfigClass();
+       ConfigAppDTE objconfig = new ConfigAppDTE();
        	DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
 	DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
         this.doc = docBuilder.newDocument();

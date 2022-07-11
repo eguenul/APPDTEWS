@@ -47,9 +47,9 @@ public class AppDTE {
     
     @SuppressWarnings("empty-statement")
     
-    public void sendDTE(String stringDTE,String certificado,String clave,String rutEnvia, boolean blReferencia) throws TransformerException, ParserConfigurationException, SAXException, IOException, Exception{
+    public String sendDTE(String stringDTE,String certificado,String clave,String rutEnvia, boolean blReferencia) throws TransformerException, ParserConfigurationException, SAXException, IOException, Exception{
 
-   ConfigClass objconfig = new ConfigClass();
+   ConfigAppDTE objconfig = new ConfigAppDTE();
    
   
    String pathdata = objconfig.getPathdata();
@@ -240,8 +240,9 @@ String valorsemilla =  objsemilla.getSeed(urlenvironment);
  UploadSii objupload = new UploadSii(urlenvironment);
 
 
- String valortrackid = objupload.uploadSii(valortoken,"",nombredte,objdte.getRutemisor(),rutEnvia);
- System.out.print(valortrackid);
+ String resultadoenvio = objupload.uploadSii(valortoken,"",nombredte,objdte.getRutemisor(),rutEnvia);
+ System.out.print(resultadoenvio);
+ return resultadoenvio;
     
  /*
  getBytesDTE objByte = new getBytesDTE();

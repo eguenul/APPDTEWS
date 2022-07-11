@@ -68,7 +68,7 @@ public class SignENVDTE {
                
         
         
-        
+         ConfigAppDTE objConfigAppDTE = new ConfigAppDTE();
          /* CREO LOS ELEMENTOS DE FIRMA */     
             // Create a DOM XMLSignatureFactory that will be used to
             // generate the enveloped signature.
@@ -96,7 +96,7 @@ public class SignENVDTE {
 
         /* instancio el certificado digital */
         KeyStore p12 = KeyStore.getInstance("pkcs12");
-        p12.load(new FileInputStream(pathcertificado), clave.toCharArray());
+        p12.load(new FileInputStream(objConfigAppDTE.getPathcert()+pathcertificado), clave.toCharArray());
         Enumeration e = p12.aliases();
         String alias = (String) e.nextElement();
         System.out.println("Alias certifikata:" + alias);

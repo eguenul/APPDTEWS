@@ -59,7 +59,7 @@ public class SignDTE {
     public void signDTE(String pathdte,String nombredte,String pathcertificado, String clave) throws NoSuchAlgorithmException, InvalidAlgorithmParameterException, KeyStoreException, IOException, CertificateException, UnrecoverableKeyException, UnrecoverableEntryException, KeyException, ParserConfigurationException, SAXException, MarshalException, XMLSignatureException, TransformerConfigurationException, TransformerException{
                
         
-        
+        ConfigAppDTE objConfigAppDTE = new ConfigAppDTE();
         
        
         
@@ -90,7 +90,7 @@ public class SignDTE {
 
         /* instancio el certificado digital */
         KeyStore p12 = KeyStore.getInstance("pkcs12");
-        p12.load(new FileInputStream(pathcertificado), clave.trim().toCharArray());
+        p12.load(new FileInputStream(objConfigAppDTE.getPathcert()+ pathcertificado), clave.trim().toCharArray());
         Enumeration e = p12.aliases();
         String alias = (String) e.nextElement();
         System.out.println("Alias certifikata:" + alias);

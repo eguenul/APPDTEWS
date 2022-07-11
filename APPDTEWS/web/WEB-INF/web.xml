@@ -9,22 +9,22 @@
         <load-on-startup>1</load-on-startup>
     </servlet>
     <servlet>
-        <servlet-name>printDTEWS</servlet-name>
+        <servlet-name>getDTEPDFWS</servlet-name>
         <servlet-class>com.sun.xml.ws.transport.http.servlet.WSServlet</servlet-class>
         <load-on-startup>1</load-on-startup>
     </servlet>
     <servlet>
-        <servlet-name>boletaWS</servlet-name>
+        <servlet-name>consultaDTEWS</servlet-name>
         <servlet-class>com.sun.xml.ws.transport.http.servlet.WSServlet</servlet-class>
         <load-on-startup>1</load-on-startup>
     </servlet>
     <servlet>
-        <servlet-name>libroBoletaWS</servlet-name>
+        <servlet-name>LibroBoletaWS</servlet-name>
         <servlet-class>com.sun.xml.ws.transport.http.servlet.WSServlet</servlet-class>
         <load-on-startup>1</load-on-startup>
     </servlet>
     <servlet>
-        <servlet-name>printBOLWS</servlet-name>
+        <servlet-name>ConsumoFolioWS</servlet-name>
         <servlet-class>com.sun.xml.ws.transport.http.servlet.WSServlet</servlet-class>
         <load-on-startup>1</load-on-startup>
     </servlet>
@@ -33,20 +33,20 @@
         <url-pattern>/sendDTEWS</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>printDTEWS</servlet-name>
-        <url-pattern>/printDTEWS</url-pattern>
+        <servlet-name>getDTEPDFWS</servlet-name>
+        <url-pattern>/getDTEPDFWS</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>boletaWS</servlet-name>
-        <url-pattern>/boletaWS</url-pattern>
+        <servlet-name>consultaDTEWS</servlet-name>
+        <url-pattern>/consultaDTEWS</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>libroBoletaWS</servlet-name>
-        <url-pattern>/libroBoletaWS</url-pattern>
+        <servlet-name>LibroBoletaWS</servlet-name>
+        <url-pattern>/LibroBoletaWS</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>printBOLWS</servlet-name>
-        <url-pattern>/printBOLWS</url-pattern>
+        <servlet-name>ConsumoFolioWS</servlet-name>
+        <url-pattern>/ConsumoFolioWS</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

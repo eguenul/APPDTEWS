@@ -13,7 +13,7 @@ import com.appdte.json.ReceptorJson;
 import com.appdte.json.TotalesJson;
 import com.appdte.models.DetalleDteModel;
 import com.appdte.models.DteModel;
-import com.appdte.sii.utilidades.ConfigClass;
+import com.appdte.sii.utilidades.ConfigAppDTE;
 import com.appdte.sii.utilidades.FuncionesCAF;
 import com.appdte.sii.utilidades.SignDTE;
 import com.appdte.sii.utilidades.Timbre;
@@ -51,7 +51,7 @@ public class AppBoleta {
     
     public void generaBoleta(String stringDTE,String certificado,String clave,String rutEnvia, boolean blReferencia) throws TransformerException, ParserConfigurationException, SAXException, IOException, Exception{
 
-   ConfigClass objconfig = new ConfigClass();
+   ConfigAppDTE objconfig = new ConfigAppDTE();
    
   
    String pathdata = objconfig.getPathdata();

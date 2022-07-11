@@ -26,7 +26,7 @@ public class ShowPdf{
      
         
         
-         ConfigClass objconfiguracion = new ConfigClass();
+         ConfigAppDTE objconfiguracion = new ConfigAppDTE();
          String pathpdf = objconfiguracion.getPathpdf();
           File pdffile = new File(pathpdf+nombredte+".pdf");
            try {

@@ -1,9 +1,8 @@
 package com.appdte.sii.cl;
 
-import com.appdte.sii.utilidades.ConfigClass;
+import com.appdte.sii.utilidades.ConfigAppDTE;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
-import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -39,7 +38,7 @@ public class UploadSii{
          
          
          
-         ConfigClass objconfig = new ConfigClass();
+         ConfigAppDTE objconfig = new ConfigAppDTE();
          
         URL url = new URL("https://"+this.urlenvironment+"/cgi_dte/UPL/DTEUpload");
         HttpURLConnection conn = (HttpURLConnection) url.openConnection();
@@ -119,7 +118,7 @@ if(fichero.delete()){
 }    
         */
       System.out.print(targetString);
-      return   readTrackId(targetString);
+      return   targetString;
            }
        
   

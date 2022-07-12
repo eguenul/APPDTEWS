@@ -16,6 +16,9 @@
     <service name="ConsumoFolioWS">
       <implementation-class>appdtews.services.ConsumoFolioWS</implementation-class>
     </service>
+    <service name="envBOLETAWS">
+      <implementation-class>appdtews.services.envBOLETAWS</implementation-class>
+    </service>
   </services>
   <clients/>
   <jsr109>false</jsr109>

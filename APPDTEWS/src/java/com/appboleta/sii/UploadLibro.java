@@ -9,6 +9,6 @@ package com.appboleta.sii;
  *
  * @author esteban
  */
-public class SignBoleta {
+public class UploadLibro {
     
 }

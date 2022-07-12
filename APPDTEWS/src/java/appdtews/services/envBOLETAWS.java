@@ -13,14 +13,14 @@ import javax.jws.WebParam;
  *
  * @author esteban
  */
-@WebService(serviceName = "getDTEPDFWS")
-public class getDTEPDFWS {
+@WebService(serviceName = "generaBOLETAWS")
+public class envBOLETAWS {
 
-    
-    @WebMethod(operationName = "getDTEPDF")
-    public String getDTEPDF(@WebParam(name = "name") String txt) {
+    /**
+     * This is a sample web service operation
+     */
+    @WebMethod(operationName = "hello")
+    public String hello(@WebParam(name = "name") String txt) {
         return "Hello " + txt + " !";
     }
-    
-    
 }

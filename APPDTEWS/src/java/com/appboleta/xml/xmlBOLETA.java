@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.appboleta.sii;
+package com.appboleta.xml;
 
 import com.appdte.models.DetalleDteModel;
 import com.appdte.models.DteModel;

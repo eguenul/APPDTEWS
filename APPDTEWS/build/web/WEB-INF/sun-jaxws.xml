@@ -5,4 +5,5 @@
   <endpoint implementation="appdtews.services.consultaDTEWS" name="consultaDTEWS" url-pattern="/consultaDTEWS"/>
   <endpoint implementation="appdtews.services.LibroBoletaWS" name="LibroBoletaWS" url-pattern="/LibroBoletaWS"/>
   <endpoint implementation="appdtews.services.ConsumoFolioWS" name="ConsumoFolioWS" url-pattern="/ConsumoFolioWS"/>
+  <endpoint implementation="appdtews.services.envBOLETAWS" name="envBOLETAWS" url-pattern="/envBOLETAWS"/>
 </endpoints>

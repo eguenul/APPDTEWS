@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.appboleta.sii;
+package com.appboleta.xml;
 
 /**
  *
  * @author esteban
  */
-public class PrintBoleta {
+public class EnvioConsumo {
     
 }

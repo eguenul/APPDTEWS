@@ -3,15 +3,8 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/src/java/appdtews/services/libroBoletaWS.java</file>
-            <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/web/index.jsp</file>
-            <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/src/java/com/appboleta/sii/xmlBOLETA.java</file>
-            <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/src/java/appdtews/services/boletaWS.java</file>
-            <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/src/java/appdtews/services/printBOLWS.java</file>
-            <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/src/java/appdtews/services/sendDTEWS.java</file>
-            <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/src/java/com/appboleta/sii/UploadConsumo.java</file>
-            <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/src/java/appdtews/services/printDTEWS.java</file>
-            <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/src/java/com/appdte/sii/utilidades/SignTimbre.java</file>
+            <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/APPDTEWS/web/WEB-INF/sun-jaxws.xml</file>
+            <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/APPDTEWS/web/META-INF/context.xml</file>
         </group>
     </open-files>
 </project-private>

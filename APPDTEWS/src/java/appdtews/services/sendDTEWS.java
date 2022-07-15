@@ -66,7 +66,7 @@ public class sendDTEWS {
      String resultadoenvio = objdte.sendDTE(stringDTE, loginuser, password, rutenvia, true);
    
    
-   objprint.printDTE(rutemisor, folio, codsii);
+      objprint.printDTE(rutemisor, folio, codsii);
 
 
         //TODO write your implementation code here:

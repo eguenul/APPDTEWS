@@ -10,17 +10,15 @@ package com.appboleta.json;
  * @author esteban
  */
 public class MainConsumoJson {
-  private ConsumoFolioJson ConsumoFolio;
+
+  private ConsumoFolioJson ConsumoFolios;
 
     public ConsumoFolioJson getConsumoFolio() {
-        return ConsumoFolio;
+        return ConsumoFolios;
     }
 
-    public void setConsumoFolio(ConsumoFolioJson ConsumoFolio) {
-        this.ConsumoFolio = ConsumoFolio;
+    public void setConsumoFolio(ConsumoFolioJson ConsumoFolios) {
+        this.ConsumoFolios = ConsumoFolios;
     }
-
-    
-    
    
 }

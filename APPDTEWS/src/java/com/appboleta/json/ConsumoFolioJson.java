@@ -4,34 +4,18 @@
  * and open the template in the editor.
  */
 package com.appboleta.json;
-
-import java.util.List;
-
-/**
- *
- * @author esteban
- */
 public class ConsumoFolioJson {
- private CaratulaConsumoJson Caratula;
- private List<ResumenConsumoJson> Resumen;
-
-    public CaratulaConsumoJson getCaratula() {
-        return Caratula;
-    }
-
-    public void setCaratula(CaratulaConsumoJson Caratula) {
-        this.Caratula = Caratula;
-    }
-
-    public List<ResumenConsumoJson> getResumen() {
-        return Resumen;
-    }
-
-    public void setResumen(List<ResumenConsumoJson> Resumen) {
-        this.Resumen = Resumen;
-    }
- 
- 
     
-  
+    private DocumentoConsumoFoliosJson DocumentoConsumoFolios;
+
+    public DocumentoConsumoFoliosJson getDocumentoConsumoFolios() {
+        return DocumentoConsumoFolios;
+    }
+
+    public void setDocumentoConsumoFolios(DocumentoConsumoFoliosJson DocumentoConsumoFolios) {
+        this.DocumentoConsumoFolios = DocumentoConsumoFolios;
+    }
+
+    
+    
 }

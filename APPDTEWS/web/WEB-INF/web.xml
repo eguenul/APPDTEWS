@@ -24,12 +24,12 @@
         <load-on-startup>1</load-on-startup>
     </servlet>
     <servlet>
-        <servlet-name>ConsumoFolioWS</servlet-name>
+        <servlet-name>envBOLETAWS</servlet-name>
         <servlet-class>com.sun.xml.ws.transport.http.servlet.WSServlet</servlet-class>
         <load-on-startup>1</load-on-startup>
     </servlet>
     <servlet>
-        <servlet-name>envBOLETAWS</servlet-name>
+        <servlet-name>ConsumoFoliosWS</servlet-name>
         <servlet-class>com.sun.xml.ws.transport.http.servlet.WSServlet</servlet-class>
         <load-on-startup>1</load-on-startup>
     </servlet>
@@ -50,12 +50,12 @@
         <url-pattern>/LibroBoletaWS</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>ConsumoFolioWS</servlet-name>
-        <url-pattern>/ConsumoFolioWS</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
         <servlet-name>envBOLETAWS</servlet-name>
         <url-pattern>/envBOLETAWS</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ConsumoFoliosWS</servlet-name>
+        <url-pattern>/ConsumoFoliosWS</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

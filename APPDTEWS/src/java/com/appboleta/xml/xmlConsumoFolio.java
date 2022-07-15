@@ -7,6 +7,7 @@ package com.appboleta.xml;
 
 import com.appboleta.json.CaratulaConsumoJson;
 import com.appboleta.json.ConsumoFolioJson;
+import com.appboleta.json.DocumentoConsumoFoliosJson;
 import com.appboleta.json.MainConsumoJson;
 import com.appboleta.json.RangoAnuladosJson;
 import com.appboleta.json.RangoUtilizadosJson;
@@ -40,9 +41,11 @@ import org.w3c.dom.Element;
 public class xmlConsumoFolio {
     
     private Document doc;
+     
     
-public void crearXml(String jsonConsumo) throws ParserConfigurationException, UnsupportedEncodingException{
-    
+  @SuppressWarnings("empty-statement")
+  public void crearXml(String jsonConsumo) throws ParserConfigurationException, UnsupportedEncodingException, TransformerException{
+    System.out.print(jsonConsumo);
     InputStream isjson = new ByteArrayInputStream(jsonConsumo.getBytes("UTF-8")); 
     BufferedReader br1 = new BufferedReader(new InputStreamReader(isjson));
   
@@ -51,7 +54,9 @@ public void crearXml(String jsonConsumo) throws ParserConfigurationException, Un
     MainConsumoJson objMain = gson.fromJson(br1, MainConsumoJson.class);
     
     ConsumoFolioJson objConsumo = objMain.getConsumoFolio();
-    CaratulaConsumoJson objCaratula = objConsumo.getCaratula();
+    DocumentoConsumoFoliosJson objdocumento = objConsumo.getDocumentoConsumoFolios();
+    
+    CaratulaConsumoJson objCaratula = objdocumento.getCaratula();
     
     
     
@@ -86,22 +91,22 @@ public void crearXml(String jsonConsumo) throws ParserConfigurationException, Un
 
     
     Element documentoconsumofolios = this.doc.createElement("DocumentoConsumoFolios");
-    Attr attrid = this.doc.createAttribute("ID");
-    attrid.setValue("IDCONSUMOFOLIO"); 
-    documentoconsumofolios.setAttributeNode(attrid);
+    Attr attrid2 = this.doc.createAttribute("ID");
+    attrid2.setValue("CONSUMOFOLIO"); 
+    documentoconsumofolios.setAttributeNode(attrid2);
     
     consumofolios.appendChild(documentoconsumofolios);
     
     
     Element caratula = this.doc.createElement("Caratula");
     Attr attrver2 = this.doc.createAttribute("version");
-    attrid.setValue("1.0"); 
+    attrver2.setValue("1.0"); 
     caratula.setAttributeNode(attrver2);
     
     documentoconsumofolios.appendChild(caratula);
     
     
-    Element rutemisor = this.doc.createElement("RutEmisor");
+   Element rutemisor = this.doc.createElement("RutEmisor");
    rutemisor.setTextContent(objCaratula.getRutEmisor());
    caratula.appendChild(rutemisor);
    Element rutenvia = this.doc.createElement("RutEnvia");
@@ -133,12 +138,15 @@ public void crearXml(String jsonConsumo) throws ParserConfigurationException, Un
     caratula.appendChild(tmstfirmaenv);
     
     
-   List<ResumenConsumoJson> listresumen = objConsumo.getResumen();
+   List<ResumenConsumoJson> listresumen = objdocumento.getResumen();
        
    
    listresumen.forEach((objetoresumen) -> {
        addResumen(documentoconsumofolios, objetoresumen );
         });
+   
+   
+   guardarDocumento();
 } 
 
 
@@ -254,7 +262,7 @@ private void guardarDocumento() throws TransformerConfigurationException, Transf
                 transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "1"); 
                             //luego guardo el documento    
                 DOMSource source = new DOMSource(this.doc);              
-                StreamResult result = new StreamResult(new File("reporteconsumo.xml"));
+                StreamResult result = new StreamResult(new File("/home/esteban/appdte/DTE/reporteconsumo.xml"));
 		transformer.transform(source, result);                
 		
         

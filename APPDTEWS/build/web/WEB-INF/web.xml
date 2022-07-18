@@ -8,54 +8,9 @@
         <servlet-class>com.sun.xml.ws.transport.http.servlet.WSServlet</servlet-class>
         <load-on-startup>1</load-on-startup>
     </servlet>
-    <servlet>
-        <servlet-name>getDTEPDFWS</servlet-name>
-        <servlet-class>com.sun.xml.ws.transport.http.servlet.WSServlet</servlet-class>
-        <load-on-startup>1</load-on-startup>
-    </servlet>
-    <servlet>
-        <servlet-name>consultaDTEWS</servlet-name>
-        <servlet-class>com.sun.xml.ws.transport.http.servlet.WSServlet</servlet-class>
-        <load-on-startup>1</load-on-startup>
-    </servlet>
-    <servlet>
-        <servlet-name>LibroBoletaWS</servlet-name>
-        <servlet-class>com.sun.xml.ws.transport.http.servlet.WSServlet</servlet-class>
-        <load-on-startup>1</load-on-startup>
-    </servlet>
-    <servlet>
-        <servlet-name>envBOLETAWS</servlet-name>
-        <servlet-class>com.sun.xml.ws.transport.http.servlet.WSServlet</servlet-class>
-        <load-on-startup>1</load-on-startup>
-    </servlet>
-    <servlet>
-        <servlet-name>ConsumoFoliosWS</servlet-name>
-        <servlet-class>com.sun.xml.ws.transport.http.servlet.WSServlet</servlet-class>
-        <load-on-startup>1</load-on-startup>
-    </servlet>
     <servlet-mapping>
         <servlet-name>sendDTEWS</servlet-name>
         <url-pattern>/sendDTEWS</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>getDTEPDFWS</servlet-name>
-        <url-pattern>/getDTEPDFWS</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>consultaDTEWS</servlet-name>
-        <url-pattern>/consultaDTEWS</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>LibroBoletaWS</servlet-name>
-        <url-pattern>/LibroBoletaWS</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>envBOLETAWS</servlet-name>
-        <url-pattern>/envBOLETAWS</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>ConsumoFoliosWS</servlet-name>
-        <url-pattern>/ConsumoFoliosWS</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

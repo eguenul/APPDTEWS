@@ -3,15 +3,33 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/APPDTEWS/src/java/com/appboleta/xml/xmlBOLETA.java</file>
-            <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/APPDTEWS/src/java/com/appdte/sii/utilidades/SignDTE.java</file>
+            <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/APPDTEWS/src/java/com/appdte/sii/utilidades/SignTimbre.java</file>
+            <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/APPDTEWS/src/java/com/appdte/sii/utilidades/DetalleVenta.java</file>
+            <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/APPDTEWS/web/META-INF/context.xml</file>
+            <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/APPDTEWS/src/java/com/appdte/sii/utilidades/SignENVDTE.java</file>
+            <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/APPDTEWS/src/java/com/appdte/sii/cesion/CesionDAO.java</file>
+            <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/APPDTEWS/nbproject/build-impl.xml</file>
+            <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/APPDTEWS/web/WEB-INF/web.xml</file>
+            <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/APPDTEWS/src/java/com/appboleta/json/ResumenConsumoJson.java</file>
             <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/APPDTEWS/src/java/com/appboleta/xml/xmlConsumoFolio.java</file>
-            <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/APPDTEWS/src/java/appdtews/services/ConsumoFoliosWS.java</file>
-            <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/APPDTEWS/src/java/com/appboleta/xml/AppBoleta.java</file>
-            <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/APPDTEWS/src/java/com/appboleta/json/MainConsumoJson.java</file>
-            <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/APPDTEWS/src/java/com/appboleta/xml/SignRCOF.java</file>
-            <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/APPDTEWS/src/java/com/appboleta/json/ConsumoFolioJson.java</file>
-            <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/APPDTEWS/src/java/com/appboleta/xml/EnvioConsumo.java</file>
+            <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/APPDTEWS/src/java/com/appdte/sii/cesion/AECDao.java</file>
+            <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/APPDTEWS/web/WEB-INF/sun-jaxws.xml</file>
+            <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/APPDTEWS/src/java/com/appdte/sii/funcionesws/ConsultaAceptacion.java</file>
+            <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/APPDTEWS/src/java/appdtews/properties/appdtews.properties</file>
+            <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/APPDTEWS/src/java/com/appdte/sii/cesion/DTECEDIDO.java</file>
+            <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/APPDTEWS/src/java/com/appdte/sii/utilidades/ConfigAppDTE.java</file>
+            <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/APPDTEWS/src/java/com/appdte/sii/utilidades/Compra.java</file>
+            <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/APPDTEWS/src/java/com/appboleta/json/MainLibroJson.java</file>
+            <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/APPDTEWS/src/java/appdtews/services/sendDTEWS.java</file>
+            <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/APPDTEWS/src/java/com/appdte/sii/cl/SignToken.java</file>
+            <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/APPDTEWS/src/java/com/appdte/sii/funcionesws/ConsultaDTE.java</file>
+            <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/APPDTEWS/src/java/com/appdte/sii/utilidades/FuncionesCAF.java</file>
+            <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/APPDTEWS/src/java/com/appdte/sii/cesion/MainCesion.java</file>
+            <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/APPDTEWS/src/java/com/appdte/sii/cl/UploadSii.java</file>
+            <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/APPDTEWS/src/java/com/appdte/sii/funcionesws/ConsultaCesion.java</file>
+            <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/APPDTEWS/src/java/com/appdte/sii/utilidades/AppDTE.java</file>
+            <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/APPDTEWS/src/java/com/appboleta/json/CaratulaConsumoJson.java</file>
+            <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/APPDTEWS/src/java/com/appdte/sii/utilidades/EnvioDTE.java</file>
         </group>
     </open-files>
 </project-private>

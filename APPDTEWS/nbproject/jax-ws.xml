@@ -4,21 +4,6 @@
     <service name="sendDTEWS">
       <implementation-class>appdtews.services.sendDTEWS</implementation-class>
     </service>
-    <service name="getDTEPDFWS">
-      <implementation-class>appdtews.services.getDTEPDFWS</implementation-class>
-    </service>
-    <service name="consultaDTEWS">
-      <implementation-class>appdtews.services.consultaDTEWS</implementation-class>
-    </service>
-    <service name="LibroBoletaWS">
-      <implementation-class>appdtews.services.LibroBoletaWS</implementation-class>
-    </service>
-    <service name="envBOLETAWS">
-      <implementation-class>appdtews.services.envBOLETAWS</implementation-class>
-    </service>
-    <service name="ConsumoFoliosWS">
-      <implementation-class>appdtews.services.ConsumoFoliosWS</implementation-class>
-    </service>
   </services>
   <clients/>
   <jsr109>false</jsr109>

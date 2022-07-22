@@ -7,11 +7,11 @@ package com.appdte.sii.funcionesws;
 
 import com.appdte.sii.cl.Semilla;
 import com.appdte.sii.cl.Token;
+import com.appdte.sii.utilidades.ConfigAppDTE;
 
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -45,21 +45,16 @@ private String MontoDte;
            
 
 
-public String getEstDte(byte[] arrayCert, String login, String clave, String environment) throws ParserConfigurationException, SAXException, IOException, Exception{
-        
-         
-       try (OutputStream os = new FileOutputStream(login)) {
-            os.write(arrayCert);
-        }
+public String getEstDte(String login, String clave, String environment) throws ParserConfigurationException, SAXException, IOException, Exception{
 
- String pathcertificado = login;
-  
+   ConfigAppDTE  objConfig = new ConfigAppDTE(); 
+         
  Semilla objsemilla = new Semilla();
- String valorsemilla = new String(); 
+ String valorsemilla; 
  valorsemilla =  objsemilla.getSeed(environment);
  
  Token objtoken = new Token(environment);
- String valortoken =  objtoken.getToken(valorsemilla,pathcertificado,clave,"");
+ String valortoken =  objtoken.getToken(valorsemilla,objConfig.getPathcert()+login  ,clave,"");
 
  
         

@@ -4,11 +4,8 @@
     <service name="sendDTEWS">
       <implementation-class>appdtews.services.sendDTEWS</implementation-class>
     </service>
-    <service name="consultaDTEWS">
-      <implementation-class>appdtews.services.consultaDTEWS</implementation-class>
-    </service>
-    <service name="getPDFWS">
-      <implementation-class>appdtews.services.getPDFWS</implementation-class>
+    <service name="getDTESTATEWS">
+      <implementation-class>appdtews.services.getDTESTATEWS</implementation-class>
     </service>
   </services>
   <clients/>

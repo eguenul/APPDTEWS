@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 import javax.xml.parsers.ParserConfigurationException;
+
 import org.xml.sax.SAXException;
 
 /**
@@ -33,8 +34,6 @@ public class ConfigAppDTE {
     public ConfigAppDTE() throws ParserConfigurationException, SAXException, IOException{
        
         
-        
-        
         Properties prop = new Properties();
         try (InputStream in = getClass().getResourceAsStream("/appdtews/properties/appdtews.properties")) {
             prop.load(in);
@@ -52,8 +51,11 @@ public class ConfigAppDTE {
           this.serverauth = prop.getProperty("server-auth");
           this.serveracceptdte = prop.getProperty("server-acceptdte");
         }
-       
+        
+      
+
 }
+
 
     public String getPathcert() {
         return pathcert;

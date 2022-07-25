@@ -3,23 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/APPDTEWS/src/java/com/appdte/json/ConsultaDTEJson.java</file>
+            <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/APPDTEWS/src/java/com/appdte/sii/utilidades/SignTimbre.java</file>
             <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/APPDTEWS/src/java/appdtews/services/sendDTEWS.java</file>
-            <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/APPDTEWS/src/java/com/appdte/sii/funcionesws/ConsultaDTE.java</file>
-            <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/APPDTEWS/src/java/com/appboleta/json/MainConsumoJson.java</file>
-            <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/APPDTEWS/src/java/com/appboleta/xml/SignRCOF.java</file>
-            <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/APPDTEWS/src/java/com/appdte/json/TotalesJson.java</file>
-            <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/APPDTEWS/src/java/com/appboleta/xml/EnvioConsumo.java</file>
-            <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/APPDTEWS/src/java/com/appboleta/xml/xmlBOLETA.java</file>
-            <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/APPDTEWS/src/java/appdtews/services/consultaDTEWS.java</file>
-            <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/APPDTEWS/src/java/com/appdte/sii/utilidades/SignDTE.java</file>
-            <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/APPDTEWS/src/java/com/appboleta/xml/xmlConsumoFolio.java</file>
-            <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/APPDTEWS/src/java/com/appdte/sii/utilidades/AppDTE.java</file>
             <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/APPDTEWS/src/java/com/appboleta/xml/AppBoleta.java</file>
-            <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/APPDTEWS/src/java/appdtews/services/getPDFWS.java</file>
-            <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/APPDTEWS/src/java/appdtews/services/printDTEWS.java</file>
-            <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/APPDTEWS/src/java/appdtews/properties/appdtews.properties</file>
-            <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/APPDTEWS/src/java/com/appboleta/json/ConsumoFolioJson.java</file>
             <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/APPDTEWS/src/java/com/appdte/sii/utilidades/ConfigAppDTE.java</file>
         </group>
     </open-files>

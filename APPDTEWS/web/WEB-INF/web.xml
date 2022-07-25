@@ -9,12 +9,7 @@
         <load-on-startup>1</load-on-startup>
     </servlet>
     <servlet>
-        <servlet-name>consultaDTEWS</servlet-name>
-        <servlet-class>com.sun.xml.ws.transport.http.servlet.WSServlet</servlet-class>
-        <load-on-startup>1</load-on-startup>
-    </servlet>
-    <servlet>
-        <servlet-name>getPDFWS</servlet-name>
+        <servlet-name>getDTESTATEWS</servlet-name>
         <servlet-class>com.sun.xml.ws.transport.http.servlet.WSServlet</servlet-class>
         <load-on-startup>1</load-on-startup>
     </servlet>
@@ -23,12 +18,8 @@
         <url-pattern>/sendDTEWS</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>consultaDTEWS</servlet-name>
-        <url-pattern>/consultaDTEWS</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>getPDFWS</servlet-name>
-        <url-pattern>/getPDFWS</url-pattern>
+        <servlet-name>getDTESTATEWS</servlet-name>
+        <url-pattern>/getDTESTATEWS</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

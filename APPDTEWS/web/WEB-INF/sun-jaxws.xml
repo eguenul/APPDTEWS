@@ -2,4 +2,7 @@
 <endpoints version="2.0" xmlns="http://java.sun.com/xml/ns/jax-ws/ri/runtime">
   <endpoint implementation="appdtews.services.sendDTEWS" name="sendDTEWS" url-pattern="/sendDTEWS"/>
   <endpoint implementation="appdtews.services.getDTESTATEWS" name="getDTESTATEWS" url-pattern="/getDTESTATEWS"/>
+  <endpoint implementation="appdtews.services.sendRCOFWS" name="sendRCOFWS" url-pattern="/sendRCOFWS"/>
+  <endpoint implementation="appdtews.services.printDTEWS" name="printDTEWS" url-pattern="/printDTEWS"/>
+  <endpoint implementation="appdtews.services.sendBOLETAWS" name="sendBOLETAWS" url-pattern="/sendBOLETAWS"/>
 </endpoints>

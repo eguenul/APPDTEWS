@@ -61,7 +61,7 @@ import org.xml.sax.SAXException;
 public class SignRCOF {
     
     
-    public void signRCOF(String pathdte,String nombredte,String pathcertificado, String clave) throws NoSuchAlgorithmException, InvalidAlgorithmParameterException, KeyStoreException, IOException, CertificateException, UnrecoverableKeyException, UnrecoverableEntryException, KeyException, ParserConfigurationException, SAXException, MarshalException, XMLSignatureException, TransformerConfigurationException, TransformerException{
+    public void signRCOF(String nombredte,String certificado, String clave) throws NoSuchAlgorithmException, InvalidAlgorithmParameterException, KeyStoreException, IOException, CertificateException, UnrecoverableKeyException, UnrecoverableEntryException, KeyException, ParserConfigurationException, SAXException, MarshalException, XMLSignatureException, TransformerConfigurationException, TransformerException{
                
         
         ConfigAppDTE objConfigAppDTE = new ConfigAppDTE();
@@ -78,7 +78,7 @@ public class SignRCOF {
             // that, and also specify the SHA1 digest algorithm and
             // the ENVELOPED Transform.
             Reference ref = fac.newReference
-             ("#IDCONSUMOFOLIO", fac.newDigestMethod(DigestMethod.SHA1, null),
+             ("#CONSUMOFOLIO", fac.newDigestMethod(DigestMethod.SHA1, null),
               Collections.singletonList
                (fac.newTransform
                 (Transform.ENVELOPED, (TransformParameterSpec) null)),
@@ -95,7 +95,7 @@ public class SignRCOF {
 
         /* instancio el certificado digital */
         KeyStore p12 = KeyStore.getInstance("pkcs12");
-        p12.load(new FileInputStream(objConfigAppDTE.getPathcert()+ pathcertificado), clave.trim().toCharArray());
+        p12.load(new FileInputStream(objConfigAppDTE.getPathcert()+ certificado), clave.trim().toCharArray());
         Enumeration e = p12.aliases();
         String alias = (String) e.nextElement();
         System.out.println("Alias certifikata:" + alias);
@@ -125,11 +125,11 @@ public class SignRCOF {
         DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
         dbf.setNamespaceAware(true);
         Document doc = dbf.newDocumentBuilder().parse
-        (new FileInputStream(pathdte+nombredte+".xml"));
+        (new FileInputStream(objConfigAppDTE.getPathdte()+nombredte+".xml"));
         
         Node documento = doc.getElementsByTagName("DocumentoConsumoFolios").item(0);
         Element eldocumento =(Element) documento;
-        eldocumento.setIdAttribute("CONSUMOFOLIO", true);
+        eldocumento.setIdAttribute("ID", true);
         
 
 // Create a DOMSignContext and specify the RSA PrivateKey and
@@ -144,10 +144,11 @@ public class SignRCOF {
         signature.sign(dsc);
 
 // Output the resulting document.
-OutputStream os2 = new FileOutputStream(pathdte+nombredte+".xml");
+OutputStream os2 = new FileOutputStream(objConfigAppDTE.getPathdte() +nombredte+".xml");
 TransformerFactory tf = TransformerFactory.newInstance();
 Transformer trans = tf.newTransformer();
 trans.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "yes");
+
 trans.transform(new DOMSource(doc), new StreamResult(os2));
 
 

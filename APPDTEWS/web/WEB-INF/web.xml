@@ -13,6 +13,21 @@
         <servlet-class>com.sun.xml.ws.transport.http.servlet.WSServlet</servlet-class>
         <load-on-startup>1</load-on-startup>
     </servlet>
+    <servlet>
+        <servlet-name>sendRCOFWS</servlet-name>
+        <servlet-class>com.sun.xml.ws.transport.http.servlet.WSServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet>
+        <servlet-name>printDTEWS</servlet-name>
+        <servlet-class>com.sun.xml.ws.transport.http.servlet.WSServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet>
+        <servlet-name>sendBOLETAWS</servlet-name>
+        <servlet-class>com.sun.xml.ws.transport.http.servlet.WSServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
     <servlet-mapping>
         <servlet-name>sendDTEWS</servlet-name>
         <url-pattern>/sendDTEWS</url-pattern>
@@ -20,6 +35,18 @@
     <servlet-mapping>
         <servlet-name>getDTESTATEWS</servlet-name>
         <url-pattern>/getDTESTATEWS</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>sendRCOFWS</servlet-name>
+        <url-pattern>/sendRCOFWS</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>printDTEWS</servlet-name>
+        <url-pattern>/printDTEWS</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>sendBOLETAWS</servlet-name>
+        <url-pattern>/sendBOLETAWS</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -49,7 +49,7 @@ public class UploadSii{
         conn.setRequestProperty("Cookie","TOKEN="+valortoken);
         
         
-        String archivo = objconfig.getPathdte()+"ENV"+nombredte +".xml";
+        String archivo = objconfig.getPathdte()+nombredte +".xml";
         conn.setUseCaches(false);
         String cadena = "";
         String contenido = "";

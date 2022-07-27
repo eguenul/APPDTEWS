@@ -42,8 +42,7 @@ public class xmlConsumoFolio {
     
     private Document doc;
      
-    
-  @SuppressWarnings("empty-statement")
+  
   public void crearXml(String jsonConsumo) throws ParserConfigurationException, UnsupportedEncodingException, TransformerException{
     System.out.print(jsonConsumo);
     InputStream isjson = new ByteArrayInputStream(jsonConsumo.getBytes("UTF-8")); 
@@ -69,7 +68,7 @@ public class xmlConsumoFolio {
     
     Attr attr1 = this.doc.createAttribute("xmlns");
     attr1.setValue("http://www.sii.cl/SiiDte"); 
-    
+    consumofolios.setAttributeNode(attr1);
     
     
     
@@ -174,7 +173,7 @@ private void addResumen(Element documentoconsumofolios, ResumenConsumoJson objRe
     
     
     
-    Element tasaiva = this.doc.createElement("TasaIva");
+    Element tasaiva = this.doc.createElement("TasaIVA");
     tasaiva.setTextContent(objResumen.getTasaIva());
     resumen.appendChild(tasaiva);
     
@@ -186,7 +185,7 @@ private void addResumen(Element documentoconsumofolios, ResumenConsumoJson objRe
     
     
     Element mnttotal = this.doc.createElement("MntTotal");
-    mnttotal.setTextContent("MntTotal");
+    mnttotal.setTextContent(objResumen.getMntTotal());
     resumen.appendChild(mnttotal);
     
     Element foliosemitidos = this.doc.createElement("FoliosEmitidos");
@@ -215,11 +214,9 @@ private void addResumen(Element documentoconsumofolios, ResumenConsumoJson objRe
 
 private void addRango(Element resumen, ResumenConsumoJson objResumen){
 
-   Element rangoutilizados = this.doc.createElement("RangoUtilizados");
-   resumen.appendChild(rangoutilizados);
-   
+    
    List<RangoUtilizadosJson> listrangoutilizado = objResumen.getRangoUtilizados();
-  
+   /*
    listrangoutilizado.stream().map((i) -> {
        Element inicial = this.doc.createElement("Inicial");
        inicial.setTextContent(i.getInicial());
@@ -231,19 +228,38 @@ private void addRango(Element resumen, ResumenConsumoJson objResumen){
             rangoutilizados.appendChild(rfinal);
         });
    
-   Element rangoanulados = this.doc.createElement("RangoAnulados");
-   resumen.appendChild(rangoanulados);
-   
+
+*/
+   listrangoutilizado.forEach((p) -> {
+       Element rangoutilizados = this.doc.createElement("RangoUtilizados");
+       resumen.appendChild(rangoutilizados);
+       
+       Element inicial = this.doc.createElement("Inicial");
+       inicial.setTextContent(p.getInicial());
+       rangoutilizados.appendChild(inicial);
+  
+       Element rfinal = this.doc.createElement("Final");
+       rfinal.setTextContent(p.getFinal());
+       rangoutilizados.appendChild(rfinal);
+        });
+  
+  
+  
+  
+  
     List<RangoAnuladosJson> listrangoanulado = objResumen.getRangoAnulados();
   
-   listrangoanulado.stream().map((i) -> {
+   listrangoanulado.forEach((x) -> {
+       
+         Element rangoanulados = this.doc.createElement("RangoAnulados");
+         resumen.appendChild(rangoanulados);
+ 
        Element inicial2 = this.doc.createElement("Inicial");
-       inicial2.setTextContent(i.getInicial());
+       inicial2.setTextContent(x.getInicial());
        rangoanulados.appendChild(inicial2);
-            return i;
-        }).forEachOrdered((i) -> {
+       
             Element rfinal2 = this.doc.createElement("Final");
-            rfinal2.setTextContent(i.getFinal());
+            rfinal2.setTextContent(x.getFinal());
             rangoanulados.appendChild(rfinal2);
         });
 }

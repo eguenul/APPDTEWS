@@ -3,10 +3,23 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/APPDTEWS/src/java/com/appdte/sii/utilidades/SignTimbre.java</file>
+            <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/APPDTEWS/src/java/appdtews/services/sendRCOFWS.java</file>
+            <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/APPDTEWS/src/java/com/appdte/sii/utilidades/Venta.java</file>
+            <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/APPDTEWS/src/java/com/appdte/sii/utilidades/DetalleVenta.java</file>
             <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/APPDTEWS/src/java/appdtews/services/sendDTEWS.java</file>
-            <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/APPDTEWS/src/java/com/appboleta/xml/AppBoleta.java</file>
-            <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/APPDTEWS/src/java/com/appdte/sii/utilidades/ConfigAppDTE.java</file>
+            <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/APPDTEWS/src/java/com/appdte/sii/cl/Token.java</file>
+            <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/APPDTEWS/src/java/com/appdte/sii/cl/SignToken.java</file>
+            <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/APPDTEWS/src/java/com/appdte/sii/cl/UploadSii.java</file>
+            <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/APPDTEWS/src/java/appdtews/services/sendBOLETAWS.java</file>
+            <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/APPDTEWS/src/java/com/appdte/sii/utilidades/getBytesAEC.java</file>
+            <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/APPDTEWS/src/java/com/appdte/sii/cl/Semilla.java</file>
+            <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/APPDTEWS/src/java/getdte/getCompras.java</file>
+            <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/APPDTEWS/src/java/com/appboleta/sii/seedBOLETA.java</file>
+            <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/APPDTEWS/src/java/com/appdte/sii/utilidades/DetalleCompra.java</file>
+            <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/APPDTEWS/src/java/appdtews/properties/appdtews.properties</file>
+            <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/APPDTEWS/src/java/com/appdte/sii/utilidades/ICVCompra.java</file>
+            <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/APPDTEWS/src/java/com/appboleta/json/DocumentoConsumoFoliosJson.java</file>
+            <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/APPDTEWS/src/java/appdtews/services/getDTESTATEWS.java</file>
         </group>
     </open-files>
 </project-private>

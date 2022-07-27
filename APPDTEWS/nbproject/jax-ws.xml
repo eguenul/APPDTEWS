@@ -7,6 +7,15 @@
     <service name="getDTESTATEWS">
       <implementation-class>appdtews.services.getDTESTATEWS</implementation-class>
     </service>
+    <service name="sendRCOFWS">
+      <implementation-class>appdtews.services.sendRCOFWS</implementation-class>
+    </service>
+    <service name="printDTEWS">
+      <implementation-class>appdtews.services.printDTEWS</implementation-class>
+    </service>
+    <service name="sendBOLETAWS">
+      <implementation-class>appdtews.services.sendBOLETAWS</implementation-class>
+    </service>
   </services>
   <clients/>
   <jsr109>false</jsr109>

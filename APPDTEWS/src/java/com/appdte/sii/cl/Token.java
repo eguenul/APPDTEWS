@@ -202,13 +202,3 @@ public String readFileToken(String cadena) throws FileNotFoundException, IOExcep
         return valortoken;
     }      
 }
-        
- 
-
-
-    
-       
-    
-    
-    
-

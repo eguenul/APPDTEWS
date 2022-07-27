@@ -5,12 +5,13 @@
  */
 package appdtews.services;
 
-import com.appboleta.sii.seedBOLETA;
-import java.io.IOException;
-import java.net.MalformedURLException;
+import com.appboleta.sii.sendBOLETA;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.jws.WebMethod;
 import javax.jws.WebService;
 import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.TransformerException;
 import javax.xml.xpath.XPathExpressionException;
 import org.xml.sax.SAXException;
 
@@ -25,11 +26,17 @@ public class sendBOLETAWS {
   
     
  @WebMethod(operationName = "sendBOLETA")
- public String sendBOLETA() throws IOException, MalformedURLException, ParserConfigurationException, SAXException, XPathExpressionException{
-     
-    seedBOLETA  objSemilla = new seedBOLETA();
-     
-     
-      return objSemilla.getSeed();
+ public String sendBOLETA(){
+     try {
+         sendBOLETA objsendBOLETA = new sendBOLETA();
+         return objsendBOLETA.sendBOLETA();
+     } catch (ParserConfigurationException ex) {
+         Logger.getLogger(sendBOLETAWS.class.getName()).log(Level.SEVERE, null, ex);
+     } catch (SAXException | XPathExpressionException | TransformerException ex) {
+         Logger.getLogger(sendBOLETAWS.class.getName()).log(Level.SEVERE, null, ex);
+     } catch (Exception ex) {
+         Logger.getLogger(sendBOLETAWS.class.getName()).log(Level.SEVERE, null, ex);
+     }
+     return null;
  }
 }

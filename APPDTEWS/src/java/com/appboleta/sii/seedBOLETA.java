@@ -29,7 +29,7 @@ import org.xml.sax.SAXException;
  */
 public class seedBOLETA {
     
- public String getSeed() throws MalformedURLException, IOException, ParserConfigurationException, SAXException, XPathExpressionException{
+ public String getSeed() throws MalformedURLException, IOException, ParserConfigurationException, SAXException, XPathExpressionException {
 /* URL url = new URL("https://apicert.sii.cl/recursos/v1/boleta.electronica.semilla");
  */
    StringBuilder result = new StringBuilder();

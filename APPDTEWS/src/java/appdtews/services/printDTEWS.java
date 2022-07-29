@@ -5,6 +5,9 @@
  */
 package appdtews.services;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
 import javax.jws.WebService;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
@@ -16,11 +19,21 @@ import javax.jws.WebParam;
 @WebService(serviceName = "printDTEWS")
 public class printDTEWS {
 
-    /**
-     * This is a sample web service operation
-     */
-    @WebMethod(operationName = "hello")
-    public String hello(@WebParam(name = "name") String txt) {
-        return "Hello " + txt + " !";
-    }
+    
+    
+  @WebMethod(operationName = "getPDF")
+  public String getPDF(@WebParam(name = "RUT") String rut, @WebParam(name = "CODSII") String codsii, @WebParam(name = "FOLIO") String folio) throws IOException{
+    
+      
+      
+  File file = new File("sample.txt");    
+  byte[] fileContent = Files.readAllBytes(file.toPath());
+  return "hello";
+    
+ }
+    
+    
+    
+    
+    
 }

@@ -5,4 +5,5 @@
   <endpoint implementation="appdtews.services.sendRCOFWS" name="sendRCOFWS" url-pattern="/sendRCOFWS"/>
   <endpoint implementation="appdtews.services.printDTEWS" name="printDTEWS" url-pattern="/printDTEWS"/>
   <endpoint implementation="appdtews.services.sendBOLETAWS" name="sendBOLETAWS" url-pattern="/sendBOLETAWS"/>
+  <endpoint implementation="appdtews.services.getXML" name="getXML" url-pattern="/getXML"/>
 </endpoints>

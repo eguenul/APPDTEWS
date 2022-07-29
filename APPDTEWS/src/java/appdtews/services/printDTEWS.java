@@ -5,9 +5,14 @@
  */
 package appdtews.services;
 
-import java.io.File;
+import com.appdte.sii.utilidades.ConfigAppDTE;
+import com.appdte.sii.utilidades.PrintDTE;
 import java.io.IOException;
 import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.Base64;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.jws.WebService;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
@@ -26,9 +31,38 @@ public class printDTEWS {
     
       
       
-  File file = new File("sample.txt");    
-  byte[] fileContent = Files.readAllBytes(file.toPath());
-  return "hello";
+      
+      
+      try {
+            
+          ConfigAppDTE objConfig = new ConfigAppDTE();       
+          PrintDTE objPrintDTE = new PrintDTE();
+          objPrintDTE.printDTE(rut, folio, codsii);
+          
+   
+       String[] arrayrutemisor = rut.split("-");
+       rut = arrayrutemisor[0];
+       String nombredte = objConfig.getPathpdf()+"ENVDTE"+rut.trim()+"F"+folio+"T"+codsii+".pdf";
+       
+          
+          
+          
+          String filePath = nombredte;
+          byte[] bytesContent;
+  
+          
+          
+          bytesContent = Files.readAllBytes(Paths.get(filePath));
+          
+          
+          String s =  Base64.getEncoder().encodeToString(bytesContent);
+          return s;
+      } catch (Exception ex) {
+          Logger.getLogger(printDTEWS.class.getName()).log(Level.SEVERE, null, ex);
+      }
+      return null;
+  
+  
     
  }
     

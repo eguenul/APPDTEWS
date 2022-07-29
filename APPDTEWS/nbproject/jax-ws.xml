@@ -16,6 +16,9 @@
     <service name="sendBOLETAWS">
       <implementation-class>appdtews.services.sendBOLETAWS</implementation-class>
     </service>
+    <service name="getXML">
+      <implementation-class>appdtews.services.getXML</implementation-class>
+    </service>
   </services>
   <clients/>
   <jsr109>false</jsr109>

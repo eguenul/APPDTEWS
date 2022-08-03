@@ -5,6 +5,7 @@
  */
 package com.appboleta.xml;
 
+import com.appdte.sii.utilidades.ConfigAppDTE;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -58,9 +59,11 @@ import org.xml.sax.SAXException;
  * @author esteban
  */
 public class SignENVBOLETA {
-    public void signENVBOLETA(String pathdte,String nombredte,String pathcertificado, String clave) throws NoSuchAlgorithmException, InvalidAlgorithmParameterException, KeyStoreException, IOException, CertificateException, UnrecoverableKeyException, UnrecoverableEntryException, KeyException, ParserConfigurationException, SAXException, MarshalException, XMLSignatureException, TransformerConfigurationException, TransformerException{
+    public void signENVBOLETA(String pathdte,String nombredte,String certificado, String clave) throws NoSuchAlgorithmException, InvalidAlgorithmParameterException, KeyStoreException, IOException, CertificateException, UnrecoverableKeyException, UnrecoverableEntryException, KeyException, ParserConfigurationException, SAXException, MarshalException, XMLSignatureException, TransformerConfigurationException, TransformerException{
                
         
+      ConfigAppDTE objConfig = new ConfigAppDTE();
+      
         
         
          /* CREO LOS ELEMENTOS DE FIRMA */     
@@ -90,7 +93,7 @@ public class SignENVBOLETA {
 
         /* instancio el certificado digital */
         KeyStore p12 = KeyStore.getInstance("pkcs12");
-        p12.load(new FileInputStream(pathcertificado), clave.toCharArray());
+        p12.load(new FileInputStream(objConfig.getPathcert()+certificado), clave.toCharArray());
         Enumeration e = p12.aliases();
         String alias = (String) e.nextElement();
         System.out.println("Alias certifikata:" + alias);

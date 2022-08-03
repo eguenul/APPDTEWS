@@ -156,7 +156,7 @@ public class EnvioBOLETA {
        
         
         Attr attr4 = this.doc.createAttribute("xsi:schemaLocation");
-	attr4.setValue("http://www.sii.cl/SiiDte EnvioDTE_v10.xsd"); 
+	attr4.setValue("http://www.sii.cl/SiiDte EnvioBOLETA_v11.xsd\""); 
         enviodte.setAttributeNode(attr4);       
         
         

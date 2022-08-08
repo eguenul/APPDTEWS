@@ -73,6 +73,11 @@ public void crearXml(DteModel encabezadodte) throws TransformerConfigurationExce
                 Element fechaemis = this.doc.createElement("FchEmis");
                 fechaemis.setTextContent(encabezadodte.getFechadte());
                 iddoc.appendChild(fechaemis);
+              
+                Element indservicio = this.doc.createElement("IndServicio");
+                indservicio.setTextContent(encabezadodte.getIndservicio());
+                iddoc.appendChild(indservicio);
+              /*
                 
                 if(Integer.parseInt(tipodte.getTextContent())==52){
                      Element tipotraslado = this.doc.createElement("IndTraslado");
@@ -87,7 +92,7 @@ public void crearXml(DteModel encabezadodte) throws TransformerConfigurationExce
                      iddoc.appendChild(frmapago);
                 }
                 
-                
+                */
                 // agrego los datos del emisor de la fctura
                                                
                 Element emisor = this.doc.createElement("Emisor");
@@ -172,9 +177,9 @@ public void crearXml(DteModel encabezadodte) throws TransformerConfigurationExce
             totales = this.doc.createElement("Totales");
             encabezado.appendChild(totales);
             
-           if(encabezadodte.getMontoafecto()>0){
+           if(encabezadodte.getMontoneto()>0){
             mntneto = this.doc.createElement("MntNeto");
-            mntneto.setTextContent(Integer.toString(encabezadodte.getMontoafecto()));
+            mntneto.setTextContent(Integer.toString(encabezadodte.getMontoneto()));
             totales.appendChild(mntneto);
             }
            
@@ -184,13 +189,13 @@ public void crearXml(DteModel encabezadodte) throws TransformerConfigurationExce
             mntexe.setTextContent(Integer.toString(encabezadodte.getMontoexento()));
             totales.appendChild(mntexe);
             }
-            
+            /*
            if (encabezadodte.getMontoiva()>0){
             tasaiva = this.doc.createElement("TasaIVA");
             tasaiva.setTextContent(Integer.toString(encabezadodte.getTasaiva()));
             totales.appendChild(tasaiva);
            }
-           
+           */
             if (encabezadodte.getMontoiva()>0){
             iva = this.doc.createElement("IVA");
             iva.setTextContent(Integer.toString(encabezadodte.getMontoiva()));
@@ -216,6 +221,7 @@ public void agregaDetalle(DetalleDteModel detalledte){
              Element qtyitem;
              Element prcitem;
              Element montoitem;
+             Element indexe;
              
              detalle = this.doc.createElement("Detalle");
     
@@ -233,6 +239,15 @@ public void agregaDetalle(DetalleDteModel detalledte){
              vlrcodigo = this.doc.createElement("VlrCodigo");
              vlrcodigo.setTextContent(detalledte.getVlrcodigo());
              cdgitem.appendChild(vlrcodigo);
+           /*  
+             indexe = this.doc.createElement("IndExe");
+             indexe.setTextContent(Integer.toString(detalledte.getIndexe()));
+             detalle.appendChild(indexe);
+             */
+             
+             
+             
+             
              
              nmbitem = this.doc.createElement("NmbItem");
              nmbitem.setTextContent(detalledte.getNmbitem());

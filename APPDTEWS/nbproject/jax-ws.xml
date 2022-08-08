@@ -19,6 +19,9 @@
     <service name="getXML">
       <implementation-class>appdtews.services.getXML</implementation-class>
     </service>
+    <service name="BOLSTATEWS">
+      <implementation-class>appdtews.services.BOLSTATEWS</implementation-class>
+    </service>
   </services>
   <clients/>
   <jsr109>false</jsr109>

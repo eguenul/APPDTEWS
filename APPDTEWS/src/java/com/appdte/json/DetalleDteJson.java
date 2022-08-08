@@ -21,7 +21,7 @@ private int prcitem;
 private int montoitem;
 private int descuentopct;
 private int descuentomonto;
-
+private int indexe;
 
 /*
 private  String item1;
@@ -110,6 +110,14 @@ public void DetalleDteJson(){
 
     public void setDescuentomonto(int descuentomonto) {
         this.descuentomonto = descuentomonto;
+    }
+
+    public int getIndexe() {
+        return indexe;
+    }
+
+    public void setIndexe(int index) {
+        this.indexe = index;
     }
 
     

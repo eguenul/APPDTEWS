@@ -98,6 +98,7 @@ public class AppBoleta {
     objdte.setRutemisor(objemisor.getRutemisor());
     objdte.setTipodte(iddoc.getTipoDTE());
     objdte.setNumdte(iddoc.getNumDTE());
+    objdte.setIndservicio(iddoc.getIndservicio());
   
     FuncionesCAF objFuncionCAF = new FuncionesCAF();
     
@@ -157,9 +158,10 @@ public class AppBoleta {
     
     
     /* DEFINO EL TOTAL Y TASA DE IMPUESTO */
-     objdte.setMontofecto(totales.getMontoafecto());
-     objdte.setMontexento(totales.getMontoexento());
-     objdte.setMontoiva(totales.getMontoiva());
+    
+    objdte.setMontoneto(totales.getMontoneto());
+    objdte.setMontexento(totales.getMontoexento());
+    objdte.setMontoiva(totales.getMontoiva());
     objdte.setTasaiva(totales.getTasaiva());
     objdte.setMontototal(totales.getMontototal());
       
@@ -180,6 +182,7 @@ for (DetalleDteJson i :  detalle){
    
     
     objdetalledte.setNrolinea(i.getNrolinea());
+    objdetalledte.setIndexe(i.getIndexe());
     objdetalledte.setTpocodigo(i.getTpocodigo());
     objdetalledte.setVlrcodigo(i.getVlrcodigo());
     objdetalledte.setNmbitem(i.getNmbitem());

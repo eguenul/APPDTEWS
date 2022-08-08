@@ -13,7 +13,7 @@ public class TotalesJson {
    int montoiva;
    int montototal;
    int tasaiva;
-
+    int montoneto;
     public int getMontoafecto() {
         return montoafecto;
     }
@@ -52,6 +52,14 @@ public class TotalesJson {
 
     public void setTasaiva(int tasaiva) {
         this.tasaiva = tasaiva;
+    }
+
+    public int getMontoneto() {
+        return montoneto;
+    }
+
+    public void setMontoneto(int montoneto) {
+        this.montoneto = montoneto;
     }
        
 

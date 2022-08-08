@@ -87,11 +87,11 @@ public class sendBOLETA {
             
             
     
-    objupload.upBOLETA(stringToken,nombredte,rutemisor,rutusuario);
+    return objupload.upBOLETA(stringToken,nombredte,rutemisor,rutusuario);
     
     
     
-    return stringToken;
+    
         
     }
             

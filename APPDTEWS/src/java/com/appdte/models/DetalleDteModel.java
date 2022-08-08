@@ -20,6 +20,8 @@ int montoitem;
 int descuentopct;
 int descuentomonto;
 
+ private int indexe;
+
     public int getDescuentomonto() {
         return descuentomonto;
     }
@@ -106,6 +108,14 @@ public DetalleDteModel(){
 
     public void setDescuentopct(int descuentoitem) {
         this.descuentopct = descuentoitem;
+    }
+
+    public int getIndexe() {
+        return indexe;
+    }
+
+    public void setIndexe(int indexe) {
+        this.indexe = indexe;
     }
     
 

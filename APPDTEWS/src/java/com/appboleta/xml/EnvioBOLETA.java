@@ -71,7 +71,7 @@ public class EnvioBOLETA {
         
         
         Element rutenvia = this.doc.createElement("RutEnvia");
-        rutenvia.setTextContent(rutusuario);
+        rutenvia.setTextContent((rutusuario.trim()));
         
         
         
@@ -80,11 +80,8 @@ public class EnvioBOLETA {
         Element rutreceptor = this.doc.createElement("RutReceptor");
         
         
-      if("maullin.sii.cl".equals(this.environment)){
         rutreceptor.setTextContent("60803000-K");
-      }else{
-          rutreceptor.setTextContent(objdte.getRutreceptor().trim());
-      }
+      
       
         caratula.appendChild(rutemisor);
         caratula.appendChild(rutenvia);
@@ -156,7 +153,7 @@ public class EnvioBOLETA {
        
         
         Attr attr4 = this.doc.createAttribute("xsi:schemaLocation");
-	attr4.setValue("http://www.sii.cl/SiiDte EnvioBOLETA_v11.xsd\""); 
+	attr4.setValue("http://www.sii.cl/SiiDte EnvioBOLETA_v11.xsd"); 
         enviodte.setAttributeNode(attr4);       
         
         

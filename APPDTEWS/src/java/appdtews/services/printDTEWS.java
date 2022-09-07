@@ -7,6 +7,7 @@ package appdtews.services;
 
 import com.appdte.sii.utilidades.ConfigAppDTE;
 import com.appdte.sii.utilidades.PrintDTE;
+import com.appdte.sii.utilidades.getTED;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -16,6 +17,9 @@ import java.util.logging.Logger;
 import javax.jws.WebService;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.TransformerException;
+import org.xml.sax.SAXException;
 
 /**
  *
@@ -65,9 +69,24 @@ public class printDTEWS {
   
     
  }
+
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "getTED")
+    public String getTED(@WebParam(name = "RUT") String rut, @WebParam(name = "CODSII") String codsii, @WebParam(name = "FOLIO") String folio){
+      
+      try {
+          getTED objget = new getTED();
+          
+          
+          return  objget.getTED(rut, folio, codsii);
+      } catch (ParserConfigurationException | SAXException | IOException | TransformerException ex) {
+          Logger.getLogger(printDTEWS.class.getName()).log(Level.SEVERE, null, ex);
+      }
+      return null;
+        
+    }
     
-    
-    
-    
-    
+            
 }

@@ -187,6 +187,7 @@ for (DetalleDteJson i :  detalle){
     objdetalledte.setDescuentopct(i.getDescuentopct());
     objdetalledte.setDescuentomonto(i.getDescuentomonto());
     objdetalledte.setMontoitem(i.getMontoitem());
+    objdetalledte.setIndexe(i.getIndexe());
     obj.agregaDetalle(objdetalledte);
     
     }

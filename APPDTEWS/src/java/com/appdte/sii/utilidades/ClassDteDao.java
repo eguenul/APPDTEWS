@@ -206,6 +206,7 @@ public void agregaDetalle(DetalleDteModel detalledte){
              Element qtyitem;
              Element prcitem;
              Element montoitem;
+             Element indexe;
              
              detalle = this.doc.createElement("Detalle");
     
@@ -223,6 +224,15 @@ public void agregaDetalle(DetalleDteModel detalledte){
              vlrcodigo = this.doc.createElement("VlrCodigo");
              vlrcodigo.setTextContent(detalledte.getVlrcodigo());
              cdgitem.appendChild(vlrcodigo);
+             
+            if(detalledte.getIndexe()>0){
+                
+                indexe = this.doc.createElement("IndExe");
+                indexe.setTextContent(String.valueOf(detalledte.getIndexe()));
+                detalle.appendChild(indexe);
+            }
+             
+             
              
              nmbitem = this.doc.createElement("NmbItem");
              nmbitem.setTextContent(detalledte.getNmbitem());

@@ -239,12 +239,15 @@ public void agregaDetalle(DetalleDteModel detalledte){
              vlrcodigo = this.doc.createElement("VlrCodigo");
              vlrcodigo.setTextContent(detalledte.getVlrcodigo());
              cdgitem.appendChild(vlrcodigo);
-           /*  
+             
+           
+            if(detalledte.getIndexe()>0){
+                     
              indexe = this.doc.createElement("IndExe");
              indexe.setTextContent(Integer.toString(detalledte.getIndexe()));
              detalle.appendChild(indexe);
-             */
-             
+           
+            }
              
              
              

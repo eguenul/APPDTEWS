@@ -42,7 +42,7 @@ public class printDTEWS {
    
        String[] arrayrutemisor = rut.split("-");
        rut = arrayrutemisor[0];
-       String nombredte = objConfig.getPathpdf()+"ENVDTE"+rut.trim()+"F"+folio+"T"+codsii+".pdf";
+       String nombredte = objConfig.getPathpdf()+"DTE"+rut.trim()+"F"+folio+"T"+codsii+".pdf";
        
           
           

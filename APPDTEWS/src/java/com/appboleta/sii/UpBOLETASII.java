@@ -25,10 +25,10 @@ import org.xml.sax.SAXException;
  * @author esteban
  */
 public class UpBOLETASII {
-    private final String urlenvironment;
+    private final String urlupload;
     
-    public UpBOLETASII(String urlenvironment){
-       this.urlenvironment = urlenvironment;
+    public UpBOLETASII(String urlupload){
+       this.urlupload = urlupload;
         
     }
  
@@ -41,7 +41,7 @@ public class UpBOLETASII {
          
          ConfigAppDTE objconfig = new ConfigAppDTE();
          
-        URL url = new URL("https://pangal.sii.cl/recursos/v1/boleta.electronica.envio");
+        URL url = new URL("https://"+this.urlupload+"/recursos/v1/boleta.electronica.envio");
         HttpURLConnection conn = (HttpURLConnection) url.openConnection();
         conn.setDoOutput(true);
         conn.setRequestMethod("POST"); 

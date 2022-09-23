@@ -9,6 +9,7 @@ import com.appdte.json.DteJson;
 import com.appdte.json.EmisorJson;
 import com.appdte.json.IdDteJson;
 import com.appdte.sii.utilidades.AppDTE;
+import com.appdte.sii.utilidades.ConfigAppDTE;
 import com.appdte.sii.utilidades.PrintDTE;
 import com.google.gson.Gson;
 import java.io.BufferedReader;
@@ -33,9 +34,9 @@ public class sendDTEWS {
     public String sendDTE(@WebParam(name = "jsonDTE") String jsonDTE, @WebParam(name = "loginuser") String loginuser, @WebParam(name = "password") String password, @WebParam(name = "rutenvia") String rutenvia) throws IOException, ParserConfigurationException, SAXException, Exception {
 
 
-
+     ConfigAppDTE objconfig = new ConfigAppDTE();
      
-     String environment = "maullin.sii.cl";
+     String environment = objconfig.getPathenvironment();
      
      AppDTE objdte = new AppDTE(loginuser,  environment);
      

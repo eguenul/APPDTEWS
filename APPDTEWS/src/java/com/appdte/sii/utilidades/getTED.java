@@ -28,7 +28,10 @@ public class getTED {
         
        
        ConfigAppDTE objConfig = new ConfigAppDTE();
-       String nombredte = objConfig.getPathdte()+"DTE"+rutemisor.trim()+"F"+foliodte+"T"+codsii;
+       
+        String[] arrayrutemisor = rutemisor.split("-"); 
+       
+       String nombredte = objConfig.getPathdte()+"DTE"+arrayrutemisor[0]+"F"+foliodte+"T"+codsii;
       
            String filepath = nombredte.trim()+".xml";
 	DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();

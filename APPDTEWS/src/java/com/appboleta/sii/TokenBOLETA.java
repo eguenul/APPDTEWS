@@ -41,6 +41,13 @@ import org.xml.sax.SAXException;
  * @author esteban
  */
 public class TokenBOLETA {
+    private final String url_token; 
+    
+    public TokenBOLETA(String url){
+        
+        this.url_token = url;
+    }
+    
     
        public String getToken(String valorsemilla,String pathcertificado,String clave) throws IOException, FileNotFoundException, ParserConfigurationException, SAXException, TransformerConfigurationException, TransformerException, Exception{
       
@@ -106,7 +113,7 @@ public class TokenBOLETA {
    public String requestToken(StringWriter writer) throws MalformedURLException, IOException, FileNotFoundException, ParserConfigurationException, SAXException {
         
        
-        URL url = new URL("https://apicert.sii.cl/recursos/v1/boleta.electronica.token");
+        URL url = new URL("https://"+this.url_token+"/recursos/v1/boleta.electronica.token");
         HttpURLConnection conn = (HttpURLConnection) url.openConnection();
         conn.setDoOutput(true);
         conn.setRequestMethod("POST"); 

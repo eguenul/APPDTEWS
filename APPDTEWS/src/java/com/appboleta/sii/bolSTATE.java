@@ -5,8 +5,7 @@
  */
 package com.appboleta.sii;
 
-import com.appboleta.sii.TokenBOLETA;
-import com.appboleta.sii.seedBOLETA;
+import com.appdte.sii.utilidades.ConfigAppDTE;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -28,23 +27,24 @@ import org.xml.sax.SAXException;
 public class bolSTATE {
  
 public String getESTATE(String certificado, String password, String rutemisor,String dvemisor,String trackid) throws IOException, MalformedURLException, ParserConfigurationException, SAXException, XPathExpressionException, TransformerException, TransformerConfigurationException, Exception{
-        
+     ConfigAppDTE objConfig = new ConfigAppDTE();   
     seedBOLETA  objSemilla = new seedBOLETA();
-    TokenBOLETA objToken = new TokenBOLETA();
-    String valorsemilla = objSemilla.getSeed();
+    TokenBOLETA objToken = new TokenBOLETA(objConfig.getEnvironmentBoleta());
+    
+    String valorsemilla = objSemilla.getSeed(objConfig.getEnvironmentBoleta());
     String  stringToken = objToken.getToken(valorsemilla, certificado, password);
    
-    return getSIIESTATE(stringToken,  rutemisor,  dvemisor,  trackid);
+    return getSIIESTATE(objConfig.getEnvironmentBoleta(),stringToken,  rutemisor,  dvemisor,  trackid);
 }
 
 
-public String getSIIESTATE(String valortoken, String rutemisor, String dvemisor,String trackid) throws IOException{
+public String getSIIESTATE(String environment,String valortoken, String rutemisor, String dvemisor,String trackid) throws IOException{
     
       try {
           
           StringBuilder result = new StringBuilder();
           
-          URL url = new URL("https://apicert.sii.cl/recursos/v1/boleta.electronica.envio/"+rutemisor+"-"+dvemisor+"-"+trackid);
+          URL url = new URL("https://"+environment+"/recursos/v1/boleta.electronica.envio/"+rutemisor+"-"+dvemisor+"-"+trackid);
           HttpURLConnection conn = (HttpURLConnection) url.openConnection();
          
           conn.setRequestMethod("GET");

@@ -10,6 +10,7 @@ import com.appdte.json.DteJson;
 import com.appdte.json.EmisorJson;
 import com.appdte.json.IdDteJson;
 import com.appdte.json.ReceptorJson;
+import com.appdte.sii.utilidades.ConfigAppDTE;
 import com.google.gson.Gson;
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
@@ -31,11 +32,11 @@ public class sendBOLETA {
     
     
  public String sendBOLETA(String jsonDTE,  String loginuser,  String password,  String rutenvia) throws IOException, MalformedURLException, ParserConfigurationException, SAXException, XPathExpressionException, TransformerException, TransformerConfigurationException, Exception{
-        
+    ConfigAppDTE objconfig = new ConfigAppDTE();
         
     seedBOLETA  objSemilla = new seedBOLETA();
-    TokenBOLETA objToken = new TokenBOLETA();
-    String valorsemilla = objSemilla.getSeed();
+    TokenBOLETA objToken = new TokenBOLETA(objconfig.getEnvironmentBoleta());
+    String valorsemilla = objSemilla.getSeed(objconfig.getEnvironmentBoleta());
     String  stringToken = objToken.getToken(valorsemilla, loginuser, password);
     
     
@@ -73,7 +74,7 @@ public class sendBOLETA {
     
     
     
-    UpBOLETASII objupload = new UpBOLETASII("");
+    UpBOLETASII objupload = new UpBOLETASII(objconfig.getUploadBoleta());
     
     
     

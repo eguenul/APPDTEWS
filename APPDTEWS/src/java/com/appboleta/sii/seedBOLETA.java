@@ -29,12 +29,11 @@ import org.xml.sax.SAXException;
  */
 public class seedBOLETA {
     
- public String getSeed() throws MalformedURLException, IOException, ParserConfigurationException, SAXException, XPathExpressionException {
-/* URL url = new URL("https://apicert.sii.cl/recursos/v1/boleta.electronica.semilla");
- */
-   StringBuilder result = new StringBuilder();
+ public String getSeed(String url_address) throws MalformedURLException, IOException, ParserConfigurationException, SAXException, XPathExpressionException {
 
- URL url = new URL("https://apicert.sii.cl/recursos/v1/boleta.electronica.semilla");
+     StringBuilder result = new StringBuilder();
+
+ URL url = new URL("https://"+url_address+"/recursos/v1/boleta.electronica.semilla");
       HttpURLConnection conn = (HttpURLConnection) url.openConnection();
       conn.setRequestMethod("GET");
       try (BufferedReader reader = new BufferedReader(

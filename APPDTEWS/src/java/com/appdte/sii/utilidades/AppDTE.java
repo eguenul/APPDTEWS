@@ -184,10 +184,12 @@ for (DetalleDteJson i :  detalle){
     objdetalledte.setDscitem(i.getNmbitem());
     objdetalledte.setQtyitem(i.getQtyitem());
     objdetalledte.setPrcitem(i.getPrcitem());
+    
     objdetalledte.setDescuentopct(i.getDescuentopct());
     objdetalledte.setDescuentomonto(i.getDescuentomonto());
     objdetalledte.setMontoitem(i.getMontoitem());
     objdetalledte.setIndexe(i.getIndexe());
+    
     obj.agregaDetalle(objdetalledte);
     
     }

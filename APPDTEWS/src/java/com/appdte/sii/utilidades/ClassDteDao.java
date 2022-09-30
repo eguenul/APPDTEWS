@@ -225,7 +225,7 @@ public void agregaDetalle(DetalleDteModel detalledte){
              vlrcodigo.setTextContent(detalledte.getVlrcodigo());
              cdgitem.appendChild(vlrcodigo);
              
-            if(detalledte.getIndexe()>0){
+            if(!"0".equals(detalledte.getIndexe())){
                 
                 indexe = this.doc.createElement("IndExe");
                 indexe.setTextContent(String.valueOf(detalledte.getIndexe()));
@@ -244,28 +244,28 @@ public void agregaDetalle(DetalleDteModel detalledte){
              detalle.appendChild(dscitem);
             
              qtyitem = this.doc.createElement("QtyItem");
-             qtyitem.setTextContent(Integer.toString(detalledte.getQtyitem()));
+             qtyitem.setTextContent(detalledte.getQtyitem());
              detalle.appendChild(qtyitem);
           
              prcitem = this.doc.createElement("PrcItem");
-             prcitem.setTextContent(Integer.toString(detalledte.getPrcitem()));
+             prcitem.setTextContent(detalledte.getPrcitem());
              detalle.appendChild(prcitem);
              
           
-             if(detalledte.getDescuentopct()>0){
+             if(!"0".equals(detalledte.getDescuentopct())){
              
                 Element descuentopct = this.doc.createElement("DescuentoPct");
                 Element descuentomonto = this.doc.createElement("DescuentoMonto");
                 
-                descuentopct.setTextContent(Integer.toString(detalledte.getDescuentopct()));
+                descuentopct.setTextContent(detalledte.getDescuentopct());
                 detalle.appendChild(descuentopct);
                 
-                descuentomonto.setTextContent(Integer.toString(detalledte.getDescuentomonto()));
+                descuentomonto.setTextContent(detalledte.getDescuentomonto());
                 detalle.appendChild(descuentomonto);
              }         
                          
              montoitem = this.doc.createElement("MontoItem");
-             montoitem.setTextContent(Integer.toString(detalledte.getMontoitem()));
+             montoitem.setTextContent(detalledte.getMontoitem());
              detalle.appendChild(montoitem);
 
              this.documento.appendChild(detalle);

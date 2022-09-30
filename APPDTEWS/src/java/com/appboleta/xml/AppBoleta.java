@@ -5,6 +5,7 @@
  */
 package com.appboleta.xml;
 
+import com.appdte.json.DescGlobalJson;
 import com.appdte.json.DetalleDteJson;
 import com.appdte.json.DteJson;
 import com.appdte.json.EmisorJson;
@@ -50,7 +51,7 @@ public class AppBoleta {
  @SuppressWarnings("empty-statement")
     
     public void generaBoleta(String stringDTE,String certificado,String clave,String rutEnvia, boolean blReferencia) throws TransformerException, ParserConfigurationException, SAXException, IOException, Exception{
-
+      
    ConfigAppDTE objconfig = new ConfigAppDTE();
    
   
@@ -99,14 +100,15 @@ public class AppBoleta {
     objdte.setTipodte(iddoc.getTipoDTE());
     objdte.setNumdte(iddoc.getNumDTE());
     objdte.setIndservicio(iddoc.getIndservicio());
-  
+    objdte.setIndmntneto(iddoc.getIndmntneto());
     FuncionesCAF objFuncionCAF = new FuncionesCAF();
     
     /* VALIDAMOS CAF */
+    
     if(objFuncionCAF.validaCAF(objconfig.getPathcaf(), objemisor.getRutemisor(),Integer.parseInt(iddoc.getTipoDTE()), Integer.parseInt(iddoc.getNumDTE()))==false){
     /*
         return null;
-      */
+     */
     }
     
     
@@ -191,12 +193,25 @@ for (DetalleDteJson i :  detalle){
     objdetalledte.setPrcitem(i.getPrcitem());
     objdetalledte.setDescuentopct(i.getDescuentopct());
     objdetalledte.setDescuentomonto(i.getDescuentomonto());
+    objdetalledte.setUndmdItem(i.getUnmditem());
     objdetalledte.setMontoitem(i.getMontoitem());
     obj.agregaDetalle(objdetalledte);
     
     }
     
-  
+
+/* ADJUNTO LOS DESCUENTOS GLOBALES   */
+
+List<DescGlobalJson> arraydescuentos = objdtejson.getDescuentoglobal();
+
+if(arraydescuentos!=null){ 
+for (DescGlobalJson x :  arraydescuentos){
+    
+   obj.agregaDescuento(x);
+   
+   
+}     
+}  
   
 auxDescripcion = objTimbre.getItem1();
 obj.guardarDocumento(nombredte,objconfig.getPathdte());

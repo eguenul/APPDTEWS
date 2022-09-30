@@ -255,7 +255,7 @@ public class Timbre{
           transformer.setOutputProperty(OutputKeys.ENCODING, "UTF-8");
           transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "yes");
        
-          transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+          transformer.setOutputProperty(OutputKeys.INDENT, "no");
           transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "1");
        
         

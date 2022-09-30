@@ -3,7 +3,22 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/APPDTEWS/src/java/com/appdte/sii/utilidades/SignTimbre.java</file>
+            <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/APPDTEWS/src/java/com/appdte/models/DetalleDteModel.java</file>
+            <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/APPDTEWS/src/java/com/appboleta/sii/sendBOLETA.java</file>
+            <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/APPDTEWS/src/java/com/appdte/sii/utilidades/Timbre.java</file>
+            <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/APPDTEWS/src/java/com/appdte/sii/utilidades/SignENVDTE.java</file>
+            <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/APPDTEWS/src/java/com/appboleta/sii/bolSTATE.java</file>
+            <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/APPDTEWS/src/java/appdtews/services/BOLSTATEWS.java</file>
+            <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/APPDTEWS/src/java/com/appdte/models/DteModel.java</file>
+            <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/APPDTEWS/src/java/com/appboleta/xml/xmlBOLETA.java</file>
+            <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/APPDTEWS/src/java/com/appdte/json/DetalleDteJson.java</file>
+            <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/APPDTEWS/src/java/com/appdte/sii/utilidades/SignDTE.java</file>
+            <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/APPDTEWS/src/java/com/appdte/sii/utilidades/AppDTE.java</file>
+            <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/APPDTEWS/src/java/com/appboleta/xml/SignENVBOLETA.java</file>
+            <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/APPDTEWS/src/java/com/appboleta/xml/AppBoleta.java</file>
             <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/APPDTEWS/src/java/appdtews/properties/appdtews.properties</file>
+            <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/APPDTEWS/src/java/com/appdte/json/DteJson.java</file>
         </group>
     </open-files>
 </project-private>

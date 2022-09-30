@@ -16,17 +16,23 @@ public class DteJson {
    
    
 
-   String tipodte;
-   String numdte;
+ private  String tipodte;
+ private  String numdte;
    
    
- IdDteJson iddoc;
- EmisorJson emisor;
- ReceptorJson receptor;
+private IdDteJson iddoc;
+private EmisorJson emisor;
+private ReceptorJson receptor;
 
- List<DetalleDteJson> detalle;
- TotalesJson totales;
- ReferenciaJson referencia; 
+private List<DetalleDteJson> detalle;
+private TotalesJson totales;
+private ReferenciaJson referencia; 
+private List <DescGlobalJson> descuentoglobal;
+
+
+
+
+ 
 
     public void setIdDte(IdDteJson iddoc){
         this.iddoc = iddoc;
@@ -111,6 +117,24 @@ public class DteJson {
     public void setReferencia(ReferenciaJson referencia) {
         this.referencia = referencia;
     }
+
+    /**
+     * @return the descuentoglobal
+     */
+    public List <DescGlobalJson> getDescuentoglobal() {
+        return descuentoglobal;
+    }
+
+    /**
+     * @param descuentoglobal the descuentoglobal to set
+     */
+    public void setDescuentoglobal(List <DescGlobalJson> descuentoglobal) {
+        this.descuentoglobal = descuentoglobal;
+    }
+
+    /**
+     * @return the descuentoglobal
+     */
 
     
 }

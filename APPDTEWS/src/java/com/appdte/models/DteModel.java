@@ -2,41 +2,41 @@ package com.appdte.models;
 
 public class DteModel {
     
-   String rutemisor;
-   String rsemisor;
-   String giroemisor;
-   String actecoemisor;
-   String diremisor;
-   String cmnaemisor;
-   String ciuemisor;
+  private String rutemisor;
+  private String rsemisor;
+  private String giroemisor;
+  private String actecoemisor;
+  private String diremisor;
+  private String cmnaemisor;
+  private String ciuemisor;
    private String indservicio;
+   private String indmntneto;
    
-   
-   String rutreceptor;
-   String rsreceptor;
-   String giroreceptor;
-   String dirreceptor;
-   String cmnareceptor;
-   String ciureceptor;
+ private String rutreceptor;
+ private String rsreceptor;
+ private String giroreceptor;
+ private String dirreceptor;
+ private String cmnareceptor;
+ private String ciureceptor;
 
-   String tipodte;
-   String numdte;
+private String tipodte;
+private String numdte;
    
-   String codigosii; 
+private String codigosii; 
    
-  int montoneto;
-   int montoafecto;
-   int montoexento;
-   int montoiva;
-   int montototal;
-   int tasaiva;
-   private String frmapago;
-   String fechadte;
+private int montoneto;
+private int montoafecto;
+private int montoexento;
+private int montoiva;
+private int montototal;
+private int tasaiva;
+private String frmapago;
+private String fechadte;
   
-   String fecharesol;
+private String fecharesol;
    
-   String numresol;
-   String tipodespacho;
+private String numresol;
+private String tipodespacho;
 
     public String getTipodespacho() {
         return tipodespacho;
@@ -297,6 +297,20 @@ public class DteModel {
 
     public void setMontoneto(int montoneto) {
         this.montoneto = montoneto;
+    }
+
+    /**
+     * @return the indmntneto
+     */
+    public String getIndmntneto() {
+        return indmntneto;
+    }
+
+    /**
+     * @param indmntneto the indmntneto to set
+     */
+    public void setIndmntneto(String indmntneto) {
+        this.indmntneto = indmntneto;
     }
 
     

@@ -7,31 +7,32 @@ package com.appdte.models;
 
 
 public class DetalleDteModel {
-int nrolinea;
-String tpocodigo;
-String vlrcodigo;
+private int nrolinea;
+private String tpocodigo;
+private String vlrcodigo;
 
-String nmbitem;
-String dscitem;
-int qtyitem;
-int prcitem;
-int montoitem;
+private String nmbitem;
+private String dscitem;
+private String qtyitem;
+private String prcitem;
+private String montoitem;
 
-int descuentopct;
-int descuentomonto;
+private String descuentopct;
+private String descuentomonto;
+private String undmditem;
 
- private int indexe;
+ private String indexe;
 
-    public int getDescuentomonto() {
+    public String getDescuentomonto() {
         return descuentomonto;
     }
 
-    public void setDescuentomonto(int descuentomonto) {
+    public void setDescuentomonto(String descuentomonto) {
         this.descuentomonto = descuentomonto;
     }
 
 public DetalleDteModel(){
-  descuentopct=0;
+  descuentopct="0";
 }
 
 
@@ -78,44 +79,56 @@ public DetalleDteModel(){
         this.dscitem = dscitem;
     }
 
-    public int getQtyitem() {
+    public String getQtyitem() {
         return qtyitem;
     }
 
-    public void setQtyitem(int qtyitem) {
+    public void setQtyitem(String qtyitem) {
         this.qtyitem = qtyitem;
     }
 
-    public int getPrcitem() {
+    public String getPrcitem() {
         return prcitem;
     }
 
-    public void setPrcitem(int prcitem) {
+    public void setPrcitem(String prcitem) {
         this.prcitem = prcitem;
     }
 
-    public int getMontoitem() {
+    public String getMontoitem() {
         return montoitem;
     }
 
-    public void setMontoitem(int montoitem) {
+    public void setMontoitem(String montoitem) {
         this.montoitem = montoitem;
     }
 
-    public int getDescuentopct() {
+    public String getDescuentopct() {
         return descuentopct;
     }
 
-    public void setDescuentopct(int descuentoitem) {
+    public void setDescuentopct(String descuentoitem) {
         this.descuentopct = descuentoitem;
     }
 
-    public int getIndexe() {
+    public String getIndexe() {
         return indexe;
     }
 
-    public void setIndexe(int indexe) {
+    public void setIndexe(String indexe) {
         this.indexe = indexe;
+    }
+
+    /**
+     * @return the undmdref
+     */
+    public String getUndmdItem() {
+        return undmditem;
+    }
+
+    
+    public void setUndmdItem(String undmditem) {
+        this.undmditem = undmditem;
     }
     
 

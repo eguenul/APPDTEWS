@@ -16,19 +16,27 @@ private String vlrcodigo;
 
 private String nmbitem;
 private String dscitem;
-private int qtyitem;
-private int prcitem;
-private int montoitem;
-private int descuentopct;
-private int descuentomonto;
-private int indexe;
+private String qtyitem;
+/*
+UnmdRef
+*/
+private String unmditem;  
+
+
+private String prcitem;
+private String montoitem;
+private String descuentopct;
+private String descuentomonto;
+private String indexe;
 
 /*
 private  String item1;
 */
 public void DetalleDteJson(){
-    descuentopct = 0;
-    
+    descuentopct = "0";
+    descuentomonto = "0";
+    indexe="0";
+    unmditem = null;
 }
     
     public int getNrolinea() {
@@ -71,53 +79,65 @@ public void DetalleDteJson(){
         this.dscitem = dscitem;
     }
 
-    public int getQtyitem() {
+    public String getQtyitem() {
         return qtyitem;
     }
 
-    public void setQtyitem(int qtyitem) {
+    public void setQtyitem(String qtyitem) {
         this.qtyitem = qtyitem;
     }
 
-    public int getPrcitem() {
+    public String getPrcitem() {
         return prcitem;
     }
 
-    public void setPrcitem(int prcitem) {
+    public void setPrcitem(String prcitem) {
         this.prcitem = prcitem;
     }
 
-    public int getMontoitem() {
+    public String getMontoitem() {
         return montoitem;
     }
 
-    public void setMontoitem(int montoitem) {
+    public void setMontoitem(String montoitem) {
         this.montoitem = montoitem;
     }
     
-    public void setDescuentopct(int descuentoitem){
+    public void setDescuentopct(String descuentoitem){
         this.descuentopct = descuentoitem;
     }
     
-    public int getDescuentopct(){
+    public String getDescuentopct(){
         return descuentopct;
         
     }
 
-    public int getDescuentomonto() {
+    public String getDescuentomonto() {
         return descuentomonto;
     }
 
-    public void setDescuentomonto(int descuentomonto) {
+    public void setDescuentomonto(String descuentomonto) {
         this.descuentomonto = descuentomonto;
     }
 
-    public int getIndexe() {
+    public String getIndexe() {
         return indexe;
     }
 
-    public void setIndexe(int index) {
+    public void setIndexe(String index) {
         this.indexe = index;
+    }
+
+    /**
+     * @return the undmditem
+     */
+    public String getUnmditem() {
+        return unmditem;
+    }
+
+    
+    public void setUnmditem(String unmditem) {
+        this.unmditem = unmditem;
     }
 
     

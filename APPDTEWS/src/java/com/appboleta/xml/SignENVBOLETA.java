@@ -64,7 +64,8 @@ public class SignENVBOLETA {
         
       ConfigAppDTE objConfig = new ConfigAppDTE();
       
-        
+            System.setProperty("com.sun.org.apache.xml.internal.security.ignoreLineBreaks","true");
+      
         
          /* CREO LOS ELEMENTOS DE FIRMA */     
             // Create a DOM XMLSignatureFactory that will be used to

@@ -58,10 +58,11 @@ public class SignDTE {
     
     public void signDTE(String pathdte,String nombredte,String pathcertificado, String clave) throws NoSuchAlgorithmException, InvalidAlgorithmParameterException, KeyStoreException, IOException, CertificateException, UnrecoverableKeyException, UnrecoverableEntryException, KeyException, ParserConfigurationException, SAXException, MarshalException, XMLSignatureException, TransformerConfigurationException, TransformerException{
                
-        
+       System.setProperty("com.sun.org.apache.xml.internal.security.ignoreLineBreaks","true");
+      
         ConfigAppDTE objConfigAppDTE = new ConfigAppDTE();
         
-       
+         
         
          /* CREO LOS ELEMENTOS DE FIRMA */     
             // Create a DOM XMLSignatureFactory that will be used to
@@ -143,6 +144,7 @@ OutputStream os2 = new FileOutputStream(pathdte+nombredte+".xml");
 TransformerFactory tf = TransformerFactory.newInstance();
 Transformer trans = tf.newTransformer();
 trans.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "yes");
+trans.setOutputProperty(OutputKeys.INDENT, "no");
 trans.transform(new DOMSource(doc), new StreamResult(os2));
 
 

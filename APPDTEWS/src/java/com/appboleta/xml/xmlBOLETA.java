@@ -5,6 +5,7 @@
  */
 package com.appboleta.xml;
 
+import com.appdte.json.DescGlobalJson;
 import com.appdte.models.DetalleDteModel;
 import com.appdte.models.DteModel;
 import java.io.File;
@@ -73,12 +74,20 @@ public void crearXml(DteModel encabezadodte) throws TransformerConfigurationExce
                 Element fechaemis = this.doc.createElement("FchEmis");
                 fechaemis.setTextContent(encabezadodte.getFechadte());
                 iddoc.appendChild(fechaemis);
-              
+                
+             
                 Element indservicio = this.doc.createElement("IndServicio");
                 indservicio.setTextContent(encabezadodte.getIndservicio());
                 iddoc.appendChild(indservicio);
-              /*
                 
+      if(!"0".equals(encabezadodte.getIndmntneto()) && encabezadodte.getIndmntneto()!=null ){ 
+                
+                Element indmntneto = this.doc.createElement("IndMntNeto");
+                indmntneto.setTextContent(encabezadodte.getIndmntneto());
+                iddoc.appendChild(indmntneto);
+      }
+              /*
+                }
                 if(Integer.parseInt(tipodte.getTextContent())==52){
                      Element tipotraslado = this.doc.createElement("IndTraslado");
                      tipotraslado.setTextContent(encabezadodte.getTipotraslado());
@@ -222,6 +231,7 @@ public void agregaDetalle(DetalleDteModel detalledte){
              Element prcitem;
              Element montoitem;
              Element indexe;
+             Element unmditem;
              
              detalle = this.doc.createElement("Detalle");
     
@@ -241,12 +251,14 @@ public void agregaDetalle(DetalleDteModel detalledte){
              cdgitem.appendChild(vlrcodigo);
              
            
-            if(detalledte.getIndexe()>0){
+            if(!"0".equals(detalledte.getIndexe()) && detalledte.getIndexe()!=null)  {
                      
              indexe = this.doc.createElement("IndExe");
-             indexe.setTextContent(Integer.toString(detalledte.getIndexe()));
+             indexe.setTextContent(detalledte.getIndexe());
              detalle.appendChild(indexe);
            
+            }else{
+                
             }
              
              
@@ -262,35 +274,88 @@ public void agregaDetalle(DetalleDteModel detalledte){
              detalle.appendChild(dscitem);
             
              qtyitem = this.doc.createElement("QtyItem");
-             qtyitem.setTextContent(Integer.toString(detalledte.getQtyitem()));
+             qtyitem.setTextContent(detalledte.getQtyitem());
              detalle.appendChild(qtyitem);
           
+           if(detalledte.getUndmdItem()!=null){
+             unmditem = this.doc.createElement("UnmdItem");
+             unmditem.setTextContent(detalledte.getUndmdItem());
+             detalle.appendChild(unmditem);
+            }
+             
              prcitem = this.doc.createElement("PrcItem");
-             prcitem.setTextContent(Integer.toString(detalledte.getPrcitem()));
+             prcitem.setTextContent(detalledte.getPrcitem());
              detalle.appendChild(prcitem);
              
           
-             if(detalledte.getDescuentopct()>0){
+             if(!"0".equals(detalledte.getDescuentopct())&& detalledte.getDescuentopct()!=null  ){
              
                 Element descuentopct = this.doc.createElement("DescuentoPct");
                 Element descuentomonto = this.doc.createElement("DescuentoMonto");
                 
-                descuentopct.setTextContent(Integer.toString(detalledte.getDescuentopct()));
+                descuentopct.setTextContent(detalledte.getDescuentopct());
                 detalle.appendChild(descuentopct);
                 
-                descuentomonto.setTextContent(Integer.toString(detalledte.getDescuentomonto()));
+                descuentomonto.setTextContent(detalledte.getDescuentomonto());
                 detalle.appendChild(descuentomonto);
              }         
                          
              montoitem = this.doc.createElement("MontoItem");
-             montoitem.setTextContent(Integer.toString(detalledte.getMontoitem()));
+             montoitem.setTextContent(detalledte.getMontoitem());
              detalle.appendChild(montoitem);
 
              this.documento.appendChild(detalle);
          
 }        
           
-       
+public void agregaDescuento(DescGlobalJson obj){
+    /*
+    
+<DscRcgGlobal>
+<NroLinDR>1</NroLinDR>
+<TpoMov>D</TpoMov>
+<GlosaDR>Porcentaje Variable</GlosaDR>
+<TpoValor>%</TpoValor>
+<ValorDR>13</ValorDR>
+</DscRcgGlobal>
+    */
+    
+    Element DscRcgGlobal = this.doc.createElement("DscRcgGlobal");
+    Element NroLinDR = this.doc.createElement("NroLinDR");
+    Element TpoMov = this.doc.createElement("TpoMov");
+  
+    
+    
+    NroLinDR.setTextContent(obj.getNrolindr());
+    TpoMov.setTextContent(obj.getTpomov());
+    Element GlosaDR = this.doc.createElement("GlosaDR");
+    GlosaDR.setTextContent(obj.getGlosadr());
+    Element TpoValor = this.doc.createElement("TpoValor");
+    TpoValor.setTextContent(obj.getTpovalor());
+    Element ValorDR = this.doc.createElement("ValorDR");
+    ValorDR.setTextContent(obj.getValordr());
+    
+    
+ 
+    
+    DscRcgGlobal.appendChild(NroLinDR);
+    DscRcgGlobal.appendChild(TpoMov);
+    DscRcgGlobal.appendChild(GlosaDR);
+    DscRcgGlobal.appendChild(TpoValor);
+    DscRcgGlobal.appendChild(ValorDR);
+    if(!"0".equals(obj.getIndexedr()) && obj.getIndexedr()!=null){
+           Element IndExeDR = this.doc.createElement("IndExeDR");
+        DscRcgGlobal.appendChild(IndExeDR);
+    }
+    
+    
+    
+  
+    
+    this.documento.appendChild(DscRcgGlobal);
+    
+    
+}       
         
       
     

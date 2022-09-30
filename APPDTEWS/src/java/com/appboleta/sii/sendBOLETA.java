@@ -32,7 +32,9 @@ public class sendBOLETA {
     
     
  public String sendBOLETA(String jsonDTE,  String loginuser,  String password,  String rutenvia) throws IOException, MalformedURLException, ParserConfigurationException, SAXException, XPathExpressionException, TransformerException, TransformerConfigurationException, Exception{
-    ConfigAppDTE objconfig = new ConfigAppDTE();
+       System.setProperty("com.sun.org.apache.xml.internal.security.ignoreLineBreaks","true");
+      
+     ConfigAppDTE objconfig = new ConfigAppDTE();
         
     seedBOLETA  objSemilla = new seedBOLETA();
     TokenBOLETA objToken = new TokenBOLETA(objconfig.getEnvironmentBoleta());
@@ -93,7 +95,7 @@ public class sendBOLETA {
     
     
     
-        
+    
     }
             
 }

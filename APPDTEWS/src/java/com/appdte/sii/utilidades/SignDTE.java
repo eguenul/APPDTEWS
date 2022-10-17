@@ -144,7 +144,13 @@ OutputStream os2 = new FileOutputStream(pathdte+nombredte+".xml");
 TransformerFactory tf = TransformerFactory.newInstance();
 Transformer trans = tf.newTransformer();
 trans.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "yes");
+trans.setOutputProperty(OutputKeys.ENCODING, "ISO-8859-1");
 trans.setOutputProperty(OutputKeys.INDENT, "no");
+
+String xmlDecl = "<?xml version=\"1.0\" encoding=\"ISO-8859-1\"?>"
+                 + System.getProperty("line.separator");
+                 os2.write(xmlDecl.getBytes("ISO-8859-1"));
+
 trans.transform(new DOMSource(doc), new StreamResult(os2));
 
 

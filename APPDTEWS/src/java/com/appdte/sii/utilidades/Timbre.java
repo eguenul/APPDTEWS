@@ -201,8 +201,10 @@ public class Timbre{
            StringWriter buf = new StringWriter();
           Transformer xform = TransformerFactory.newInstance().newTransformer();
           
-          xform.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "yes");
+          xform.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "NO");
            xform.setOutputProperty(OutputKeys.INDENT, "no");
+                xform.setOutputProperty(OutputKeys.ENCODING, "ISO-8859-1");
+      
           xform.transform(new DOMSource(dd), new StreamResult(buf));
          
           
@@ -252,12 +254,11 @@ public class Timbre{
 	 DOMSource source = new DOMSource(doc);
 	 StreamResult result = new StreamResult(new File(pathdte+nombredte+".xml"));
 	
-          transformer.setOutputProperty(OutputKeys.ENCODING, "UTF-8");
-          transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "yes");
+          transformer.setOutputProperty(OutputKeys.ENCODING, "ISO-8859-1");
+          transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "no");
        
           transformer.setOutputProperty(OutputKeys.INDENT, "no");
-          transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "1");
-       
+        
         
 transformer.transform(source, result);
 	  System.out.println("Done");

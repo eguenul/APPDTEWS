@@ -84,7 +84,6 @@ stringRequest =  "--9022632e1130lc4"+"\r\n"+
          "Content-Type: application/octet-stream"+"\r\n"+
         "Content-Transfer-Encoding: binary"+"\r\n"+
          "\r\n"+
-        "<?xml version=\"1.0\" encoding=\"ISO-8859-1\"?>"+"\r\n"+
          contenido+"\r\n"+"\r\n"+  "--9022632e1130lc4--";
         
 

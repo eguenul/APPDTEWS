@@ -267,12 +267,12 @@ public void agregaDetalle(DetalleDteModel detalledte){
              nmbitem = this.doc.createElement("NmbItem");
              nmbitem.setTextContent(detalledte.getNmbitem());
              detalle.appendChild(nmbitem);
-          
+          /*
              dscitem = this.doc.createElement("DscItem");
           
              dscitem.setTextContent(detalledte.getDscitem());
              detalle.appendChild(dscitem);
-            
+           */ 
              qtyitem = this.doc.createElement("QtyItem");
              qtyitem.setTextContent(detalledte.getQtyitem());
              detalle.appendChild(qtyitem);

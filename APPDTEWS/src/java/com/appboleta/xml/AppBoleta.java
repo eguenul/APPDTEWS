@@ -173,14 +173,15 @@ public class AppBoleta {
       /* cargo los detalles */
      List<DetalleDteJson> detalle = objdtejson.getDetalleDteJson();
   
-    
+    /*
    Timbre objTimbre = new Timbre(objconfig.getPathdte(),nombredte,pathdata,pathcaf);
-   String auxDescripcion;
+   
+   /*
+   String pathdte,String nombredte, String pathdata,String pathcaf, String parmrut
+   */
+ 
 for (DetalleDteJson i :  detalle){     
-  if(i.getNrolinea()==1){  
-       objTimbre.setItem1(i.getNmbitem());
-       auxDescripcion = i.getNmbitem();
- }
+ 
    
     
     objdetalledte.setNrolinea(i.getNrolinea());
@@ -213,12 +214,23 @@ for (DescGlobalJson x :  arraydescuentos){
 }     
 }  
   
-auxDescripcion = objTimbre.getItem1();
 obj.guardarDocumento(nombredte,objconfig.getPathdte());
+
+
+/*
+
+
+    
+    public void creaTimbre( String pathdte,String nombredte, String pathdata,String pathcaf, String parmrut ) 
+
 objTimbre.creaTimbre(objdte, auxDescripcion,rutemisor);
   
     
 /* preparo el DTE para firmar */
+Timbre objTimbre = new Timbre();
+objTimbre.creaTimbre(objconfig.getPathdte(),nombredte,objconfig.getPathdata(),objconfig.getPathcaf(),rutemisor);
+        
+
 SignDTE objFirma = new SignDTE();
 objFirma.signDTE(objconfig.getPathdte(),nombredte,certificado,clave);
    

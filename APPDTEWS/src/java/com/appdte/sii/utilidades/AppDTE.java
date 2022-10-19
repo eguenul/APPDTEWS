@@ -168,13 +168,10 @@ public class AppDTE {
      List<DetalleDteJson> detalle = objdtejson.getDetalleDteJson();
   
     
-   Timbre objTimbre = new Timbre(objconfig.getPathdte(),nombredte,pathdata,pathcaf);
-   String auxDescripcion;
+   Timbre objTimbre = new Timbre();
+ 
 for (DetalleDteJson i :  detalle){     
-  if(i.getNrolinea()==1){  
-       objTimbre.setItem1(i.getNmbitem());
-       auxDescripcion = i.getNmbitem();
- }
+ 
    
     
     objdetalledte.setNrolinea(i.getNrolinea());
@@ -210,8 +207,12 @@ objReferenciaModel.setTpoDocRef(referencia.getTpoDocRef());
     
 obj.agregaRegerencia(objReferenciaModel,blReferencia);
     
-auxDescripcion = objTimbre.getItem1();
+
 obj.guardarDocumento(nombredte,objconfig.getPathdte());
+
+
+
+/*
 objTimbre.creaTimbre(objdte, auxDescripcion,rutemisor);
   
     
@@ -229,7 +230,7 @@ objFirmaENV.signENVDTE(objconfig.getPathdte(),nombredte,certificado,clave);
     
 
  /* OBTENGO LA SEMILLA PARA AUTENTIFICARME AL SII   */ 
- 
+ /*
   Semilla objsemilla = new Semilla();
 
   
@@ -241,12 +242,12 @@ String valorsemilla =  objsemilla.getSeed(urlenvironment);
 
 
  UploadSii objupload = new UploadSii(urlenvironment);
-
-
+*/
+/*
  String resultadoenvio = objupload.uploadSii(valortoken,"","ENV"+ nombredte,objdte.getRutemisor(),rutEnvia);
  System.out.print(resultadoenvio);
  return resultadoenvio;
-    
+  */  
  /*
  getBytesDTE objByte = new getBytesDTE();
  Object[] arrayObjetos = new Object[2];
@@ -256,7 +257,7 @@ String valorsemilla =  objsemilla.getSeed(urlenvironment);
    */ 
 
  
- 
+ return "null";
 }
    
 

@@ -69,10 +69,6 @@ public class sendBOLETA {
     ReceptorJson objreceptor = objdtejson.getReceptor();
     IdDteJson iddoc = objdtejson.getIdDte();
     
-    /*
-    
-    String valortoken,String pathdte,String nombredte ,String rutemisor,String rutusuario
-    */
     
     
     
@@ -94,8 +90,7 @@ public class sendBOLETA {
     
     
     
-    
-    
+   
     }
             
 }

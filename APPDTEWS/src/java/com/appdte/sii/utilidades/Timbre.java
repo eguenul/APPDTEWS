@@ -1,6 +1,5 @@
 package com.appdte.sii.utilidades;
 
-import com.appdte.models.DteModel;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
@@ -33,9 +32,8 @@ import java.security.NoSuchAlgorithmException;
 import java.security.NoSuchProviderException;
 import java.security.SignatureException;
 
-
-
 public class Timbre{
+    
     String rutemisor;
     String razonsocial;
     String tipodocumento;
@@ -52,19 +50,17 @@ public class Timbre{
     String pathcaf;
     String item1;
     
-    public Timbre(String pathdte,String nombredte, String pathdata,String pathcaf){
-        this.nombredte = nombredte;
-        this.pathdte = pathdte;
-        this.pathdata = pathdata;
-        this.pathcaf = pathcaf;
+    
+ public Timbre(){
+        
     }
     
     
     
-    public void creaTimbre(DteModel objdte, String auxDescripcion, String parmrut) throws ParserConfigurationException, SAXException, IOException, TransformerConfigurationException, TransformerException, FileNotFoundException, NoSuchAlgorithmException, NoSuchProviderException, InvalidKeyException, SignatureException{
+    public void creaTimbre( String pathdte,String nombredte, String pathdata,String pathcaf, String parmrut ) throws ParserConfigurationException, SAXException, IOException, TransformerConfigurationException, TransformerException, FileNotFoundException, NoSuchAlgorithmException, NoSuchProviderException, InvalidKeyException, SignatureException{
     
    
-         String filepath = this.pathdte+this.nombredte+".xml";
+         String filepath = pathdte+nombredte+".xml";
 	 DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
 	 DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
 	 Document doc = docBuilder.parse(filepath);
@@ -79,42 +75,42 @@ public class Timbre{
          
          
            Element re = doc.createElement("RE");
-           re.setTextContent(objdte.getRutemisor().trim());
+           re.setTextContent( doc.getElementsByTagName("RUTEmisor").item(0).getTextContent());
            dd.appendChild(re);
          
          
          Element td = doc.createElement("TD");
-         td.setTextContent(objdte.getTipodte());
+         td.setTextContent(doc.getElementsByTagName("TipoDTE").item(0).getTextContent());
          dd.appendChild(td);
          
          Element f = doc.createElement("F");
-         f.setTextContent(objdte.getNumdte());
+         f.setTextContent(doc.getElementsByTagName("Folio").item(0).getTextContent());
          dd.appendChild(f);
          
          Element fe = doc.createElement("FE");
-         fe.setTextContent(objdte.getFechadte());
+         fe.setTextContent(doc.getElementsByTagName("FchEmis").item(0).getTextContent());
          dd.appendChild(fe);
          
          Element rr = doc.createElement("RR");
-         rr.setTextContent(objdte.getRutreceptor());
+         rr.setTextContent(doc.getElementsByTagName("RUTRecep").item(0).getTextContent());
          dd.appendChild(rr);
                   
          
          Element rsr = doc.createElement("RSR");
-         rsr.setTextContent(objdte.getRsreceptor());
+         rsr.setTextContent(doc.getElementsByTagName("RznSocRecep").item(0).getTextContent());
          dd.appendChild(rsr);
          
          Element mnt = doc.createElement("MNT");
-         mnt.setTextContent(Integer.toString(objdte.getMontototal()));
+         mnt.setTextContent(doc.getElementsByTagName("MntTotal").item(0).getTextContent());
          dd.appendChild(mnt);
          
          Element it1 = doc.createElement("IT1");
-         it1.setTextContent(auxDescripcion);
+         it1.setTextContent(doc.getElementsByTagName("NmbItem").item(0).getTextContent());
          dd.appendChild(it1);
          
       
          
-           leerCaf(parmrut,objdte.getTipodte(),this.pathcaf);
+           leerCaf(parmrut,doc.getElementsByTagName("TipoDTE").item(0).getTextContent(),pathcaf);
          
            Element da = doc.createElement("DA");
            
@@ -201,10 +197,11 @@ public class Timbre{
            StringWriter buf = new StringWriter();
           Transformer xform = TransformerFactory.newInstance().newTransformer();
           
-          xform.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "NO");
-           xform.setOutputProperty(OutputKeys.INDENT, "no");
-                xform.setOutputProperty(OutputKeys.ENCODING, "ISO-8859-1");
-      
+          xform.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "yes");
+        
+          xform.setOutputProperty(OutputKeys.ENCODING, "ISO-8859-1");
+         
+         xform.setOutputProperty(OutputKeys.INDENT, "no");
           xform.transform(new DOMSource(dd), new StreamResult(buf));
          
           
@@ -253,14 +250,14 @@ public class Timbre{
          Transformer transformer = transformerFactory.newTransformer();
 	 DOMSource source = new DOMSource(doc);
 	 StreamResult result = new StreamResult(new File(pathdte+nombredte+".xml"));
-	
-          transformer.setOutputProperty(OutputKeys.ENCODING, "ISO-8859-1");
-          transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "no");
-       
-          transformer.setOutputProperty(OutputKeys.INDENT, "no");
         
+         transformer.setOutputProperty(OutputKeys.ENCODING, "ISO-8859-1");
+       	      
+         transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "no");
+         transformer.setOutputProperty(OutputKeys.INDENT, "no");
+          
         
-transformer.transform(source, result);
+           transformer.transform(source, result);
 	  System.out.println("Done");
          
     }
@@ -327,31 +324,21 @@ transformer.transform(source, result);
         String nombreArchivo =this.pathdata+this.nombredte+".rsa";
         FileWriter fw = new FileWriter(nombreArchivo);
         BufferedWriter bw = new BufferedWriter(fw);
+        byte ptext[] = stringrsask.getBytes();
+        String auxtext = new String(ptext,"ISO-8859-1");
+        
         try (PrintWriter printtimbre = new PrintWriter(bw)) {
-            printtimbre.print(stringrsask);
+            printtimbre.print(auxtext);
             printtimbre.close();
         }
         
       
   }
-   
-    
-                
-                
-    
-   public void setItem1(String item1){
-       this.item1 = item1;
-       
-   }
-   
-   public String getItem1(){
-       return item1;
-       
-   }
+}
    
                 
                 
-	}  
+	
   
   
   

@@ -1,7 +1,3 @@
-# To change this license header, choose License Headers in Project Properties.
-# To change this template file, choose Tools | Templates
-# and open the template in the editor.
-
 
 path-certificate=/home/ec2-user/appdtefolder/certificate/
 path-caf=/home/ec2-user/appdtefolder/CAF/
@@ -15,12 +11,3 @@ path-privatekey=/home/ec2-user/appdtefolder/data/
 environment-url=palena.sii.cl
 environment-boleta-url=api.sii.cl
 upload-boleta-url=rahue.sii.cl
-
-
-
-
-
-
-#variables utilzadas para cesi\u00f3n de creditos
-server-auth=palena.sii.cl
-server-acceptdte=ws2.sii.cl

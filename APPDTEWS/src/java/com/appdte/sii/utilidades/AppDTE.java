@@ -50,16 +50,9 @@ public class AppDTE {
     public String sendDTE(String stringDTE,String certificado,String clave,String rutEnvia, boolean blReferencia) throws TransformerException, ParserConfigurationException, SAXException, IOException, Exception{
 
    ConfigAppDTE objconfig = new ConfigAppDTE();
-   
+        /* CARGO LOS PARAMETROS DE CONFIGURACION */
+        /* ingreso el DTE en formato JSON */
   
-   String pathdata = objconfig.getPathdata();
-   String pathcaf = objconfig.getPathcaf();
-  
-   /* CARGO LOS PARAMETROS DE CONFIGURACION */
-   String pathdte = objconfig.getPathdte();
-   String urlenvironment = this.environment;
-   /* ingreso el DTE en formato JSON */
-             
              
    System.out.println("Reading JSON from a file");
    System.out.println("----------------------------");
@@ -168,8 +161,6 @@ public class AppDTE {
      List<DetalleDteJson> detalle = objdtejson.getDetalleDteJson();
   
     
-   Timbre objTimbre = new Timbre();
- 
 for (DetalleDteJson i :  detalle){     
  
    
@@ -217,6 +208,15 @@ objTimbre.creaTimbre(objdte, auxDescripcion,rutemisor);
   
     
 /* preparo el DTE para firmar */
+
+/* preparo el DTE para firmar */
+
+Timbre objTimbre = new Timbre();
+ 
+objTimbre.creaTimbre(objconfig.getPathdte(),nombredte,objconfig.getPathdata(),objconfig.getPathcaf(),rutemisor);
+
+
+
 SignDTE objFirma = new SignDTE();
 objFirma.signDTE(objconfig.getPathdte(),nombredte,certificado,clave);
    
@@ -230,24 +230,24 @@ objFirmaENV.signENVDTE(objconfig.getPathdte(),nombredte,certificado,clave);
     
 
  /* OBTENGO LA SEMILLA PARA AUTENTIFICARME AL SII   */ 
- /*
+ 
   Semilla objsemilla = new Semilla();
 
   
  
-String valorsemilla =  objsemilla.getSeed(urlenvironment);
+String valorsemilla =  objsemilla.getSeed(objconfig.getPathenvironment());
  
- Token objtoken = new Token(urlenvironment);
+ Token objtoken = new Token(objconfig.getPathenvironment());
  String valortoken =  objtoken.getToken(valorsemilla,certificado,clave,nombredte);
 
 
- UploadSii objupload = new UploadSii(urlenvironment);
-*/
-/*
+ UploadSii objupload = new UploadSii(objconfig.getPathenvironment());
+
+
  String resultadoenvio = objupload.uploadSii(valortoken,"","ENV"+ nombredte,objdte.getRutemisor(),rutEnvia);
  System.out.print(resultadoenvio);
  return resultadoenvio;
-  */  
+ 
  /*
  getBytesDTE objByte = new getBytesDTE();
  Object[] arrayObjetos = new Object[2];
@@ -257,7 +257,7 @@ String valorsemilla =  objsemilla.getSeed(urlenvironment);
    */ 
 
  
- return "null";
+ 
 }
    
 

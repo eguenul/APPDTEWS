@@ -1,0 +1,70 @@
+{
+"emisor":{
+  "rutemisor":"76979506-5",
+  "rsemisor":"ESPECIALISTAS EN MANTENIMIENTO. SPA",
+  "giroemisor":"SERVICIOS INFORMATICOS",
+  "fecharesol":"2022-08-20",
+  "numresol":"0",
+   "diremisor":"quillay 467 villa presidente rio",
+  "cmnaemisor":"TALCAHUANO",
+  "ciuemisor":"CONCEPCION",
+  "codsiisucur":"1",   
+  "rutenvia":"13968481-8"
+},   
+"receptor":{
+  "rutreceptor":"13968481-8",
+  "rsreceptor":"AMULEN CONSULTORES"
+  
+},
+"iddoc" : {
+      "tipodte" : "39",
+      "numdte": "43",
+      "fechaemision":"2022-09-29",
+      "indservicio":"3",
+	  "indmntneto":"2"
+
+    },
+"totales":{  
+        "montoneto":"1000000",
+        "montoexento":"0",
+        "montoiva":"190000",
+        "montototal":"1190000"
+},
+  "detalle":[
+          {
+            "nrolinea" : "1",
+            "tpocodigo" : "INT",
+            "vlrcodigo" : "3333",
+            "undmditem":"UNIDAD",
+			"nmbitem":"BOMBA HIDRAULICA",
+            "qtyitem":"1",
+            "prcitem":"500000",	  
+            "montoitem":"500000"
+         },
+          {
+            "nrolinea" : "2",
+            "tpocodigo" : "INT",
+            "vlrcodigo" : "23233",
+			"undmditem":"UNIDAD",
+            "nmbitem":"BOMBA HIDRAULICA",
+            "qtyitem":"1",
+            "prcitem":"500000",
+            "montoitem":"500000"  
+          }
+        ],
+	
+	"descuentoglobal":[
+		{
+			  "nrolindr":"1",
+              "tpomov":"D",
+              "tpovalor":"%",
+              "valordr":"6.0",
+              "indexedr":"0",
+			  "glosadr":"DESCUENTO PROMOCION"	
+			
+		}	
+		
+		]
+	
+}
+

@@ -1,0 +1,73 @@
+{
+"emisor":{
+  "rutemisor":"76979506-5",
+  "rsemisor":"ESPECIALISTAS EN MANTENIMIENTO. SPA",
+  "giroemisor":"SERVICIOS INFORMATICOS",
+  "fecharesol":"2022-08-20",
+  "numresol":"0",
+   "diremisor":"quillay 467 villa presidente rio",
+  "cmnaemisor":"TALCAHUANO",
+  "ciuemisor":"CONCEPCION",
+  "codsiisucur":"1",   
+  "rutenvia":"13968481-8"
+},   
+"receptor":{
+  "rutreceptor":"13968481-8",
+  "rsreceptor":"CLIENTE DE PRUEBA"
+  
+},
+"iddoc" : {
+      "tipodte" : "39",
+      "numdte": "13",
+      "fechaemision":"2022-09-29",
+      "indservicio":"3"
+
+    },
+"totales":{  
+        "montoneto":"1000000",
+        "montoexento":"300000",
+        "montoiva":"190000",
+        "montototal":"1490000"
+},
+  "detalle":[
+          {
+            "nrolinea" : "1",
+            "tpocodigo" : "INT",
+            "vlrcodigo" : "3333",
+            "undmditem":"UNIDAD",
+			"nmbitem":"BOMBA HIDRAULICA",
+            "qtyitem":"1.0",
+            "prcitem":"595000",
+            "montoitem":"595000"
+
+         },
+          {
+            "nrolinea" : "2",
+            "tpocodigo" : "INT",
+            "vlrcodigo" : "23233",
+			"undmditem":"UNIDAD",
+            "nmbitem":"BOMBA HIDRAULICA",
+            "qtyitem":"1.0",
+            "prcitem":"595000",
+            "montoitem":"595000"  
+          },
+        {
+            "nrolinea" : "3",
+            "tpocodigo" : "INT",
+           	"indexe":"1",
+			"vlrcodigo" : "23233",
+			"undmditem":"UNIDAD",
+            "nmbitem":"SERVICIO EXENTO",
+            "qtyitem":"1.0",
+            "prcitem":"300000",
+            "montoitem":"300000"  
+          }
+        
+  
+  
+  
+  
+  
+  ]
+}
+

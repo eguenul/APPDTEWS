@@ -1,0 +1,75 @@
+{
+"emisor":{
+  "rutemisor":"76040308-3",
+  "rsemisor":"EGGA INFORMATICA",
+  "giroemisor":"SERVICIOS DE INGENIERIA",
+  "actecoemisor":"429000",
+  "diremisor":"quillay 467 villa presidente rio",
+  "cmnaemisor":"TALCAHUANO",
+  "ciuemisor":"CONCEPCION",
+  "fecharesol":"2022-08-20",
+  "numresol":"0",
+  "codsiisucur":"1",    
+  "rutenvia":"13968481-8"
+},   
+"receptor":{
+  "rutreceptor":"77813960-K",
+  "rsreceptor":"AMULEN CONSULTORES LTDA",
+  "giroreceptor":"ASESORIA TRIBUTARIA",
+  "dirreceptor":"URMENETA 305 OFIC 512",
+  "cmnareceptor":"puerto montt",
+  "ciureceptor":"puerto montt"
+},
+"iddoc" : {
+      "tipodte" : "33",
+      "numdte": "83",
+      "fechaemision":"2022-09-01",
+      "frmapago":"3"	   
+    },  
+"referencia":{
+                  "codref":"0",
+                  "razonref":"DOCUMENTO DE PRUEBAS",
+                  "numref":"1", 
+                  "TpoDocRef":"801",
+                  "folioref":"1",
+                  "fecharef":"2022-09-01"
+},
+"totales":{  
+    "montoafecto":"750000",
+    "montoexento":"0",
+    "montoiva":"142500",
+    "tasaiva":"19", 
+    "montototal":"892500"  
+},
+  "detalle":[
+          {
+            "nrolinea" : "1",
+            "tpocodigo" : "INT",
+            "vlrcodigo" : "3333",
+            "nmbitem":"SERVIDOR HP",
+            "qtyitem":"1",
+            "prcitem":"500000",
+            "descuentopct" :"0",
+            "descuentomonto":"0",
+            "indexe":"0",
+            "montoitem":"500000"
+
+			  
+			  
+          },
+          {
+            "nrolinea" : "2",
+            "tpocodigo" : "INT",
+            "vlrcodigo" : "23233",
+            "nmbitem":"SERVICIOS DE ASESORIA INFORMATICA",
+            "qtyitem":"1",
+            "prcitem":"250000",
+            "descuentopct" :"0",
+            "descuentomonto":"0",
+            "indexe":"0",
+            "montoitem":"250000"
+
+          }
+        ]
+}
+

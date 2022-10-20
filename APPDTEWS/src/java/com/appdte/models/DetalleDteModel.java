@@ -33,6 +33,8 @@ private String undmditem;
 
 public DetalleDteModel(){
   descuentopct="0";
+  indexe="0";
+  descuentomonto="0";
 }
 
 

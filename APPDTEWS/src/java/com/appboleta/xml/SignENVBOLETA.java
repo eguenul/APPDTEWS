@@ -9,6 +9,7 @@ import com.appdte.sii.utilidades.ConfigAppDTE;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.security.InvalidAlgorithmParameterException;
 import java.security.KeyException;
@@ -40,6 +41,7 @@ import javax.xml.crypto.dsig.keyinfo.KeyValue;
 import javax.xml.crypto.dsig.keyinfo.X509Data;
 import javax.xml.crypto.dsig.spec.C14NMethodParameterSpec;
 import javax.xml.crypto.dsig.spec.TransformParameterSpec;
+import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.OutputKeys;
@@ -52,6 +54,7 @@ import javax.xml.transform.stream.StreamResult;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
+import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 /**
@@ -114,12 +117,32 @@ public class SignENVBOLETA {
         */
          KeyInfo ki = kif.newKeyInfo(item);    
         // Instantiate the document to be signed.
+
         DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
         dbf.setNamespaceAware(true);
+         
         Document doc = dbf.newDocumentBuilder().parse
         (new FileInputStream(pathdte+"ENV"+nombredte+".xml"));
         doc.setXmlStandalone(true);
-        Node documento = doc.getElementsByTagName("SetDTE").item(0);
+/*FileInputStream archivodte =new FileInputStream(pathdte+"ENV"+nombredte+".xml");
+ InputStreamReader inputcaf = new InputStreamReader(archivodte,"ISO-8859-1");
+ InputSource sourcedte = new InputSource(inputcaf);      
+*/
+
+         DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
+	 DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
+/*	 
+ InputStream in = new FileInputStream(filepath);
+      XMLInputFactory factory = XMLInputFactory.newInstance();
+      XMLStreamReader parser = factory.createXMLStreamReader(in,"ISO-8859-1");
+*/
+
+
+
+      
+
+
+Node documento = doc.getElementsByTagName("SetDTE").item(0);
         Element eldocumento =(Element) documento;
         eldocumento.setIdAttribute("ID", true);
         

@@ -117,12 +117,21 @@ public class SignDTE {
         
         
          /* INSTANCIO EL DOCUMENTO A FIRMAR */
-// Instantiate the document to be signed.
+// Instantiate the document to be signed./*
         DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
         dbf.setNamespaceAware(true);
         Document doc = dbf.newDocumentBuilder().parse
         (new FileInputStream(pathdte+nombredte+".xml"));
         
+
+
+
+
+
+
+
+
+
         Node documento = doc.getElementsByTagName("Documento").item(0);
         Element eldocumento =(Element) documento;
         eldocumento.setIdAttribute("ID", true);

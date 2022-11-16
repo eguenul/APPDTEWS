@@ -233,15 +233,16 @@ objTimbre.creaTimbre(objconfig.getPathdte(),nombredte,objconfig.getPathdata(),ob
 
 SignDTE objFirma = new SignDTE();
 objFirma.signDTE(objconfig.getPathdte(),nombredte,certificado,clave);
-   
+
     /* ahora envuelvo el DTE en un sobre electrónico */
-   
+
 EnvioBOLETA objenvio = new EnvioBOLETA(this.environment);
 objenvio.generaEnvio(objdte,nombredte,objconfig.getPathdte(),rutEnvia);
-  
+
+
 SignENVBOLETA objFirmaENV = new SignENVBOLETA();
 objFirmaENV.signENVBOLETA(objconfig.getPathdte(),nombredte,certificado,clave);
-    
+   
 
   
  

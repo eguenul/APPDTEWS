@@ -2,6 +2,7 @@ package com.appdte.sii.utilidades;
 
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -26,12 +27,14 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import java.io.FileNotFoundException;
+import java.io.InputStreamReader;
 import java.io.StringWriter;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 import java.security.NoSuchProviderException;
 import java.security.SignatureException;
-
+import org.apache.commons.lang3.StringEscapeUtils;
+import org.xml.sax.InputSource;
 public class Timbre{
     
     String rutemisor;
@@ -61,9 +64,17 @@ public class Timbre{
     
    
          String filepath = pathdte+nombredte+".xml";
+
+ FileInputStream archivodte =new FileInputStream(filepath);
+ InputStreamReader inputdte = new InputStreamReader(archivodte,"ISO-8859-1");
+ InputSource sourcedte = new InputSource(inputdte);      
+
+
+
+
 	 DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
 	 DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
-	 Document doc = docBuilder.parse(filepath);
+	 Document doc = docBuilder.parse(sourcedte);
         
          Node documento = doc.getElementsByTagName("Documento").item(0);
          Element ted = doc.createElement("TED");
@@ -119,10 +130,19 @@ public class Timbre{
            re2.setTextContent(this.rutemisor);
            da.appendChild(re2);
          
-           Element rs = doc.createElement("RS");
-           rs.setTextContent(this.razonsocial);
-           da.appendChild(rs);
+           Element rs = doc.createElement("RS"); 
+/*          
+ rs.setTextContent();
+*/
           
+            
+           rs.setTextContent(this.razonsocial);
+
+          da.appendChild(rs);
+          
+
+
+
            Element td2 = doc.createElement("TD");
            td2.setTextContent(this.tipodocumento);
            da.appendChild(td2);
@@ -262,14 +282,21 @@ public class Timbre{
          
     }
     
-    
   public void leerCaf(String auxrutemisor, String tipodocumento,String pathcaf) throws ParserConfigurationException, SAXException, IOException{
         
         String filepath2 = pathcaf +"F"+auxrutemisor+"T"+tipodocumento+".xml";
 	
+FileInputStream archivodte =new FileInputStream(filepath2);
+ InputStreamReader inputcaf = new InputStreamReader(archivodte,"ISO-8859-1");
+ InputSource sourcecaf = new InputSource(inputcaf);      
+
+
+
+
+
         DocumentBuilderFactory docFactory2 = DocumentBuilderFactory.newInstance();
 	DocumentBuilder docBuilder2 = docFactory2.newDocumentBuilder();
-	Document doc2 = docBuilder2.parse(filepath2);
+	Document doc2 = docBuilder2.parse(sourcecaf);
    
         NodeList nl = doc2.getElementsByTagName("RE");
         Element el = (Element) nl.item(0);
@@ -332,8 +359,10 @@ public class Timbre{
             printtimbre.close();
         }
         
-      
+     
   }
+
+
 }
    
                 

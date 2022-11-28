@@ -33,7 +33,6 @@ import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 import java.security.NoSuchProviderException;
 import java.security.SignatureException;
-import org.apache.commons.lang3.StringEscapeUtils;
 import org.xml.sax.InputSource;
 public class Timbre{
     

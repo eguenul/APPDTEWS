@@ -1,0 +1,31 @@
+{ "emisor":{
+               "rutemisor" : "77499104-2",
+                "rsemisor" : "COMERCIAL KUKO?S SPA",
+                "giroemisor" : "OTRAS ACTIVIDADES DE VENTA AL POR MENOR EN COMERCIOS NO ESPECIALIZADOS N.C.P.",
+                "fecharesol" : "2022-09-12",
+                  "numresol" : "0",
+                  "diremisor" : "MONJITAS 550 DP 19",
+                  "cmnaemisor" : "Santiago centro",
+                  "ciuemisor" : "Santiago centro",
+                  "codsiisucur" : "1",
+                  "rutenvia" : "26218953-8"                 
+                    },   
+                    "receptor":{
+                      "rutreceptor":"13968481-8",
+                      "rsreceptor":"ESTEBAN GUENUL ALMONACID"                
+                    },
+                    "iddoc" : {
+                          "tipodte" : "39",
+                          "numdte": "6",
+                          "fechaemision":"2022-09-20",
+                          "indservicio":"3",
+                          "fchvenc":"2022-09-20"    
+                       },                  
+                    "totales":{  
+                        "montoneto":"13260",
+                        "montoexento":"0",
+                        "montoiva":"2519",                 
+                        "montototal":"15780"  
+                    },
+                      "detalle": [{"nrolinea":"1","tpocodigo":"INT","vlrcodigo":"7501059215764","nmbitem":"100 Pipers 1lt","qtyitem":"2","prcitem":"15780","montoitem":"15780"}] 
+                    }

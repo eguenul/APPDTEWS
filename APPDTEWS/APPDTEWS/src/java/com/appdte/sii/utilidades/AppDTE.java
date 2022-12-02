@@ -59,7 +59,7 @@ public class AppDTE {
   
    
   
-    InputStream isjson = new ByteArrayInputStream(stringDTE.getBytes("UTF-8")); 
+    InputStream isjson = new ByteArrayInputStream(stringDTE.getBytes("ISO-8859-1")); 
     BufferedReader br1 = new BufferedReader(new InputStreamReader(isjson));
   
   

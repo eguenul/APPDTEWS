@@ -74,12 +74,13 @@ public class EnvioDTE {
         Element rutreceptor = this.doc.createElement("RutReceptor");
         
         
-      if("maullin.sii.cl".equals(this.environment)){
+      
         rutreceptor.setTextContent("60803000-K");
-      }else{
+  /*    
+  }else{
           rutreceptor.setTextContent(objdte.getRutreceptor().trim());
       }
-      
+    */  
         caratula.appendChild(rutemisor);
         caratula.appendChild(rutenvia);
         caratula.appendChild(rutreceptor);

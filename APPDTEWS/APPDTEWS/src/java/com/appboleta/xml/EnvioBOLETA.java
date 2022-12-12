@@ -157,9 +157,32 @@ public class EnvioBOLETA {
         
         
         
+         this.doc.appendChild(enviodte);
+         TransformerFactory transformerFactory = TransformerFactory.newInstance();
+         Transformer transformer = transformerFactory.newTransformer();
+       
+         transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "no");   
+         transformer.setOutputProperty(OutputKeys.ENCODING, "ISO-8859-1");
+         transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+         transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "0"); 
+         
+         DOMSource source = new DOMSource(this.doc);
+        
+	 StreamResult result;
+         result = new StreamResult(new File(objconfig.getPathdte()+"ENV"+nombredte+".xml"));
+	
+   
+         
+         transformer.transform(source, result);
+         System.out.println("Done");
+        
+         addBOLETA(nombredte);
+}      
+    
+    private void addBOLETA(String nombredte) throws ParserConfigurationException, SAXException, IOException, TransformerConfigurationException, TransformerException{
+     ConfigAppDTE objconfig = new ConfigAppDTE(); 
         /* agrego el dte ya firmado */
-           String cadena;
-      
+        
            String archivo = objconfig.getPathdte()+ nombredte+".xml";
 /*
  FileInputStream archivodte = new FileInputStream(archivo);
@@ -189,21 +212,32 @@ StringWriter buf = new StringWriter();
 
           
     
-    Node fragmentNode = docBuilder.parse(new InputSource(new StringReader(stringnode))).getDocumentElement();
+    Node fragmentNode = docBuilder2.parse(new InputSource(new StringReader(stringnode))).getDocumentElement();
    
-    fragmentNode = this.doc.importNode(fragmentNode, true);
     
-    setdte.appendChild(fragmentNode);
-
-         this.doc.appendChild(enviodte);
-         TransformerFactory transformerFactory = TransformerFactory.newInstance();
+    
+    
+        String filepath = objconfig.getPathdte()+"ENV"+nombredte.trim()+".xml";
+	DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
+	DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
+        System.out.print(filepath);     
+        Document docENV = docBuilder.parse(filepath.trim());
+    
+        fragmentNode = docENV.importNode(fragmentNode, true);
+    
+        
+        
+        Node setdte = docENV.getElementsByTagName("SetDTE").item(0);
+        setdte.appendChild(fragmentNode);
+       
+        TransformerFactory transformerFactory = TransformerFactory.newInstance();
          Transformer transformer = transformerFactory.newTransformer();
        
          transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "no");   
          transformer.setOutputProperty(OutputKeys.ENCODING, "ISO-8859-1");
          transformer.setOutputProperty(OutputKeys.INDENT, "no");
         
-         DOMSource source = new DOMSource(this.doc);
+         DOMSource source = new DOMSource(docENV);
         
 	 StreamResult result;
          result = new StreamResult(new File(objconfig.getPathdte()+"ENV"+nombredte+".xml"));
@@ -212,7 +246,10 @@ StringWriter buf = new StringWriter();
          
          transformer.transform(source, result);
          System.out.println("Done");
-        
-        
-}      
+    
+    }
+    
+    
+    
+    
 }

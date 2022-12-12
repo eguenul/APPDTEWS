@@ -5,18 +5,9 @@
  */
 package appdtews.services;
 
-import com.appdte.json.DteJson;
-import com.appdte.json.EmisorJson;
-import com.appdte.json.IdDteJson;
 import com.appdte.sii.utilidades.AppDTE;
 import com.appdte.sii.utilidades.ConfigAppDTE;
-import com.appdte.sii.utilidades.PrintDTE;
-import com.google.gson.Gson;
-import java.io.BufferedReader;
-import java.io.ByteArrayInputStream;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import javax.jws.WebService;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
@@ -42,16 +33,17 @@ public class sendDTEWS {
      
      String stringDTE = jsonDTE;
      System.out.print(stringDTE);
+  /*
      PrintDTE objprint = new PrintDTE();
-     
+    */ 
      
       System.out.print(stringDTE);
      
-     
+  /*   
    InputStream isjson = new ByteArrayInputStream(stringDTE.getBytes("ISO-8859-1")); 
     BufferedReader br1 = new BufferedReader(new InputStreamReader(isjson));
-  
-  
+  */
+  /*
     Gson gson = new Gson(); 
     DteJson objdtejson = gson.fromJson(br1, DteJson.class);
  
@@ -59,16 +51,18 @@ public class sendDTEWS {
     
         
      EmisorJson objemisor = objdtejson.getEmisor();
-   
+   */
+    /*
      String rutemisor = objemisor.getRutemisor();
      String folio = iddoc.getNumDTE();
      
      String codsii = iddoc.getTipoDTE();
+     */
      String resultadoenvio = objdte.sendDTE(stringDTE, loginuser, password, rutenvia, true);
    
-   
+   /*
       objprint.printDTE(rutemisor, folio, codsii);
-
+*/
 
         //TODO write your implementation code here:
         return resultadoenvio;

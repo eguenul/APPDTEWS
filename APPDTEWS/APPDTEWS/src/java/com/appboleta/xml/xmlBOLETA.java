@@ -371,7 +371,7 @@ public void agregaDescuento(DescGlobalJson obj){
                 transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "no");
               
                 transformer.setOutputProperty(OutputKeys.INDENT, "yes"); 
-                transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "1"); 
+                transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "0"); 
                             //luego guardo el documento    
                 DOMSource source = new DOMSource(this.doc);              
                 StreamResult result = new StreamResult(new File(pathdte+  nombredte+".xml"));

@@ -3,12 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/APPDTEWS/src/java/com/appdte/sii/utilidades/AppDTE.java</file>
-            <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/APPDTEWS/src/java/com/appdte/json/ConsultaDTEjson.java</file>
-            <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/APPDTEWS/src/java/appdtews/services/printDTEWS.java</file>
-            <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/APPDTEWS/src/java/com/appdte/sii/funcionesws/ConsultaDTE.java</file>
-            <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/APPDTEWS/src/java/com/appdte/json/MainConsultaDTE.java</file>
-            <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/APPDTEWS/src/java/appdtews/services/getDTESTATEWS.java</file>
+            <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/APPDTEWS/APPDTEWS/src/java/com/appboleta/xml/xmlBOLETA.java</file>
+            <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/APPDTEWS/APPDTEWS/src/java/com/appdte/sii/utilidades/Timbre.java</file>
+            <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/APPDTEWS/APPDTEWS/src/java/com/appboleta/xml/EnvioBOLETA.java</file>
+            <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/APPDTEWS/APPDTEWS/src/java/com/appdte/sii/utilidades/EnvioDTE.java</file>
+            <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/APPDTEWS/APPDTEWS/src/java/com/appdte/sii/utilidades/AppDTE.java</file>
+            <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/APPDTEWS/APPDTEWS/src/java/appdtews/services/sendDTEWS.java</file>
+            <file>file:/home/esteban/proyectos_web/webservicedte/APPDTEWS/APPDTEWS/APPDTEWS/src/java/appdtews/services/BOLSTATEWS.java</file>
         </group>
     </open-files>
 </project-private>

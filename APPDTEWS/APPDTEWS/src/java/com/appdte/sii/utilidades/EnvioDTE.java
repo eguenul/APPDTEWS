@@ -5,13 +5,12 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
 
 import java.io.StringReader;
+import java.io.StringWriter;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -156,23 +155,7 @@ public class EnvioDTE {
         
         
         
-        /* agrego el dte ya firmado */
-           String cadena;
-         String stringnode = "";
-           String archivo = objconfig.getPathdte()+ nombredte+".xml";
-         FileReader f = new FileReader(archivo);
-       try (BufferedReader b = new BufferedReader(f)) {
-           while((cadena = b.readLine())!=null) {
-             stringnode = stringnode + cadena + "\n";
-           }}
-          
-    File fichero = new File(objconfig.getPathdte()+nombredte+".xml");
-    
-          
-    
-    Node fragmentNode = docBuilder.parse(new InputSource(new StringReader(stringnode))).getDocumentElement();
-    fragmentNode = this.doc.importNode(fragmentNode, true);
-    setdte.appendChild(fragmentNode);
+     
 
          this.doc.appendChild(enviodte);
          TransformerFactory transformerFactory = TransformerFactory.newInstance();
@@ -180,8 +163,9 @@ public class EnvioDTE {
        
          transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "no");   
          transformer.setOutputProperty(OutputKeys.ENCODING, "iso-8859-1");
-         transformer.setOutputProperty(OutputKeys.INDENT, "no");
-        
+         transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+          transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "0"); 
+              
          DOMSource source = new DOMSource(this.doc);
         
 	 StreamResult result;
@@ -191,9 +175,88 @@ public class EnvioDTE {
          
          transformer.transform(source, result);
          System.out.println("Done");
-        
-        
+      
+        addDTE(nombredte);
 }      
+   
+  
+   private void addDTE(String nombredte) throws ParserConfigurationException, SAXException, IOException, TransformerException{
+     ConfigAppDTE objconfig = new ConfigAppDTE();
+      String archivo = objconfig.getPathdte()+ nombredte+".xml";
+/*
+ FileInputStream archivodte = new FileInputStream(archivo);
+ InputStreamReader inputdte = new InputStreamReader(archivodte,"ISO-8859-1");
+ InputSource sourcedte = new InputSource(inputdte);      
+  */      
+
+	 DocumentBuilderFactory docFactory2 = DocumentBuilderFactory.newInstance();
+	 DocumentBuilder docBuilder2 = docFactory2.newDocumentBuilder();
+	 Document doc2 = docBuilder2.parse(archivo);
+         Node dte = doc2.getElementsByTagName("DTE").item(0);
+    
+          StringWriter buf = new StringWriter();
+          Transformer xform = TransformerFactory.newInstance().newTransformer();
+          
+          xform.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "yes");
+        
+          xform.setOutputProperty(OutputKeys.ENCODING, "ISO-8859-1");
+         
+         xform.setOutputProperty(OutputKeys.INDENT, "no");
+          xform.transform(new DOMSource(dte), new StreamResult(buf));   
+         
+          
+          String stringnode = buf.toString();
+          
+
+
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+        String filepath = objconfig.getPathdte()+"ENV"+nombredte.trim()+".xml";
+	DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
+	DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
+        System.out.print(filepath);     
+        Document docENV = docBuilder.parse(filepath.trim());
+        
+        
+        /* datos del emisor */
+        Node setdte = docENV.getElementsByTagName("SetDTE").item(0);
+     
+      
+       
+    Node fragmentNode = docBuilder.parse(new InputSource(new StringReader(stringnode))).getDocumentElement();
+    fragmentNode = docENV.importNode(fragmentNode, true);
+    setdte.appendChild(fragmentNode);
+       
+        TransformerFactory transformerFactory = TransformerFactory.newInstance();
+         Transformer transformer = transformerFactory.newTransformer();
+       
+         transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "no");   
+         transformer.setOutputProperty(OutputKeys.ENCODING, "ISO-8859-1");
+         transformer.setOutputProperty(OutputKeys.INDENT, "no");
+        
+         DOMSource source = new DOMSource(docENV);
+        
+	 StreamResult result;
+         result = new StreamResult(new File(objconfig.getPathdte()+"ENV"+nombredte+".xml"));
+	
+   
+         
+         transformer.transform(source, result);
+         System.out.println("Done");
+   }
+   
+   
 }
    
    

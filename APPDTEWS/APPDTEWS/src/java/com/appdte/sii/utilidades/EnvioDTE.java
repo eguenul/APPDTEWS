@@ -6,8 +6,10 @@ import javax.xml.parsers.ParserConfigurationException;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStreamReader;
 
 import java.io.StringReader;
 import java.io.StringWriter;
@@ -183,15 +185,15 @@ public class EnvioDTE {
    private void addDTE(String nombredte) throws ParserConfigurationException, SAXException, IOException, TransformerException{
      ConfigAppDTE objconfig = new ConfigAppDTE();
       String archivo = objconfig.getPathdte()+ nombredte+".xml";
-/*
+
  FileInputStream archivodte = new FileInputStream(archivo);
  InputStreamReader inputdte = new InputStreamReader(archivodte,"ISO-8859-1");
  InputSource sourcedte = new InputSource(inputdte);      
-  */      
+        
 
 	 DocumentBuilderFactory docFactory2 = DocumentBuilderFactory.newInstance();
 	 DocumentBuilder docBuilder2 = docFactory2.newDocumentBuilder();
-	 Document doc2 = docBuilder2.parse(archivo);
+	 Document doc2 = docBuilder2.parse(sourcedte);
          Node dte = doc2.getElementsByTagName("DTE").item(0);
     
           StringWriter buf = new StringWriter();

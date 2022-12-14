@@ -314,7 +314,7 @@ public void agregaDetalle(DetalleDteModel detalledte){
 	        Transformer transformer = transformerFactory.newTransformer();     
               
                 transformer.setOutputProperty(OutputKeys.ENCODING, "ISO-8859-1");
-                transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "yes");
+                transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "no");
               
                 transformer.setOutputProperty(OutputKeys.INDENT, "yes"); 
                 transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "0"); 

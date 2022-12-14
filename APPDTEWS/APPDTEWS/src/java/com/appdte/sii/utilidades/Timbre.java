@@ -1,5 +1,6 @@
 package com.appdte.sii.utilidades;
 
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
@@ -27,15 +28,16 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.InputStreamReader;
-import java.io.StringWriter;
+import java.io.StringReader;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 import java.security.NoSuchProviderException;
 import java.security.SignatureException;
 import org.xml.sax.InputSource;
+
 public class Timbre{
-    
     String rutemisor;
     String razonsocial;
     String tipodocumento;
@@ -47,188 +49,69 @@ public class Timbre{
     String textoidk;
     String textofrma;
     String nombredte;
-    String pathdte;
     String pathdata;
-    String pathcaf;
     String item1;
     
-    
- public Timbre(){
+    public Timbre(){
         
     }
     
     
     
     public void creaTimbre( String pathdte,String nombredte, String pathdata,String pathcaf, String parmrut ) throws ParserConfigurationException, SAXException, IOException, TransformerConfigurationException, TransformerException, FileNotFoundException, NoSuchAlgorithmException, NoSuchProviderException, InvalidKeyException, SignatureException{
-    
+         this.pathdata = pathdata;
    
          String filepath = pathdte+nombredte+".xml";
-
- FileInputStream archivodte =new FileInputStream(filepath);
- InputStreamReader inputdte = new InputStreamReader(archivodte,"ISO-8859-1");
- InputSource sourcedte = new InputSource(inputdte);      
-
-
-
-
 	 DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
 	 DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
-	 Document doc = docBuilder.parse(sourcedte);
+	 Document doc = docBuilder.parse(filepath);
         
          Node documento = doc.getElementsByTagName("Documento").item(0);
          Element ted = doc.createElement("TED");
          ted.setAttribute("version", "1.0");
          documento.appendChild(ted);
-         
-         Element dd = doc.createElement("DD");
-         ted.appendChild(dd);
-         
-         
-           Element re = doc.createElement("RE");
-           re.setTextContent( doc.getElementsByTagName("RUTEmisor").item(0).getTextContent());
-           dd.appendChild(re);
-         
-         
-         Element td = doc.createElement("TD");
-         td.setTextContent(doc.getElementsByTagName("TipoDTE").item(0).getTextContent());
-         dd.appendChild(td);
-         
-         Element f = doc.createElement("F");
-         f.setTextContent(doc.getElementsByTagName("Folio").item(0).getTextContent());
-         dd.appendChild(f);
-         
-         Element fe = doc.createElement("FE");
-         fe.setTextContent(doc.getElementsByTagName("FchEmis").item(0).getTextContent());
-         dd.appendChild(fe);
-         
-         Element rr = doc.createElement("RR");
-         rr.setTextContent(doc.getElementsByTagName("RUTRecep").item(0).getTextContent());
-         dd.appendChild(rr);
-                  
-         
-         Element rsr = doc.createElement("RSR");
-         rsr.setTextContent(doc.getElementsByTagName("RznSocRecep").item(0).getTextContent());
-         dd.appendChild(rsr);
-         
-         Element mnt = doc.createElement("MNT");
-         mnt.setTextContent(doc.getElementsByTagName("MntTotal").item(0).getTextContent());
-         dd.appendChild(mnt);
-         
-         Element it1 = doc.createElement("IT1");
-         it1.setTextContent(doc.getElementsByTagName("NmbItem").item(0).getTextContent());
-         dd.appendChild(it1);
-         
-      
-         
-           leerCaf(parmrut,doc.getElementsByTagName("TipoDTE").item(0).getTextContent(),pathcaf);
-         
-           Element da = doc.createElement("DA");
-           
-           
-           Element re2 = doc.createElement("RE");
-           re2.setTextContent(this.rutemisor);
-           da.appendChild(re2);
-         
-           Element rs = doc.createElement("RS"); 
-/*          
- rs.setTextContent();
-*/
-          
-            
-           rs.setTextContent(this.razonsocial);
-
-          da.appendChild(rs);
-          
-
-
-
-           Element td2 = doc.createElement("TD");
-           td2.setTextContent(this.tipodocumento);
-           da.appendChild(td2);
-         
-           Element rng = doc.createElement("RNG");
-           da.appendChild(rng);
-           
-           Element d = doc.createElement("D");
-           d.setTextContent(this.desde);
-           rng.appendChild(d);
-           
-           Element h = doc.createElement("H");
-           h.setTextContent(this.hasta);
-           rng.appendChild(h);
-           
-           Element fa = doc.createElement("FA");
-           fa.setTextContent(this.fecha);
-           da.appendChild(fa);
-           
-           
-           
-           
-           
-           Element rsapk = doc.createElement("RSAPK");
-           da.appendChild(rsapk);
-           
-           
-           Element m = doc.createElement("M");
-           m.setTextContent(textom);
-           rsapk.appendChild(m);
-           
-           
-           
-           
-           
-           Element e = doc.createElement("E");
-           e.setTextContent(textoe);
-           rsapk.appendChild(e);
-           
-         
-           Element idk = doc.createElement("IDK");
-           idk.setTextContent(textoidk);
-           da.appendChild(idk);
-           
-           
-           Element caf = doc.createElement("CAF");
-           caf.setAttribute("version", "1.0");
-           
-           caf.appendChild(da);
-           dd.appendChild(caf);
-           
-             
-           Element frma = doc.createElement("FRMA");
-           frma.setTextContent(textofrma);
-           frma.setAttribute("algoritmo", "SHA1withRSA");
-           caf.appendChild(frma);
-           
-           
-           
-           Date date = new Date();
+    
+          Date date = new Date();
            DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
            
           String stringFecha = dateFormat.format(date);
           DateFormat timeFormat = new SimpleDateFormat("HH:mm:ss");
           String stringHora = timeFormat.format(date);
           
-          Element tsted = doc.createElement("TSTED");
-          tsted.setTextContent(stringFecha+"T"+stringHora);
-          dd.appendChild(tsted);
-           
-          /* genero el mensaje a firmar */ 
-           StringWriter buf = new StringWriter();
-          Transformer xform = TransformerFactory.newInstance().newTransformer();
-          
-          xform.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "yes");
+           leerCaf(parmrut,doc.getElementsByTagName("TipoDTE").item(0).getTextContent(),pathcaf,pathdata,nombredte);
         
-          xform.setOutputProperty(OutputKeys.ENCODING, "ISO-8859-1");
          
-         xform.setOutputProperty(OutputKeys.INDENT, "no");
-          xform.transform(new DOMSource(dd), new StreamResult(buf));
-         
-          
-          String auxmensaje;
-          auxmensaje = buf.toString();
-          String auxmensaje2 = new String(auxmensaje.getBytes(),"ISO-8859-1"); 
+  String strDigest = "<DD><RE>"+ doc.getElementsByTagName("RUTEmisor").item(0).getTextContent()+"</RE>" 
+                     +"<TD>"+doc.getElementsByTagName("TipoDTE").item(0).getTextContent()+"</TD>"
+                     +"<F>"+doc.getElementsByTagName("Folio").item(0).getTextContent()+"</F>"
+                     +"<FE>"+doc.getElementsByTagName("FchEmis").item(0).getTextContent()+"</FE>"
+                     +"<RR>"+doc.getElementsByTagName("RUTRecep").item(0).getTextContent()+"</RR>"
+                     +"<RSR>"+doc.getElementsByTagName("RznSocRecep").item(0).getTextContent()+"</RSR>"
+                     +"<MNT>"+doc.getElementsByTagName("MntTotal").item(0).getTextContent()+"</MNT>"
+                     +"<IT1>"+doc.getElementsByTagName("NmbItem").item(0).getTextContent()+"</IT1>"      
+                     +"<CAF version=\"1.0\">"
+                     +"<DA><RE>"+this.rutemisor+"</RE>"
+                     +"<RS>"+this.razonsocial+"</RS>" 
+                     +"<TD>"+this.tipodocumento+"</TD>" 
+                     +"<RNG>"+"<D>"+this.desde+"</D>"+"<H>"+this.hasta+"</H>"+"</RNG>"
+                    +"<FA>"+this.fecha +"</FA>"
+                    +"<RSAPK><M>"+textom+"</M>"
+                    +"<E>"+textoe+"</E></RSAPK>"
+                    +"<IDK>"+textoidk+"</IDK></DA>"
+                    +"<FRMA algoritmo=\"SHA1withRSA\">"+textofrma+"</FRMA></CAF>"
+                    +"<TSTED>"+stringFecha+"T"+stringHora+"</TSTED></DD>"
+                     ; 
+        
           
             
+          Node nodeDD = docBuilder.parse(new InputSource(new StringReader(strDigest))).getDocumentElement();
+          nodeDD = doc.importNode(nodeDD, true);
+ 
+          ted.appendChild(nodeDD);
+          
+          
+          
+          
        //  String ruta = "/home/esteban/appdte/json/timrbre.json";
        // File archivo = new File(ruta);
        // BufferedWriter bw = null;
@@ -240,22 +123,39 @@ public class Timbre{
        //     bw.write(auxmensaje);
        // }
        // bw.close();
-          
-          
-          
-          
-          
              
-          SignTimbre objSignTimbre = new SignTimbre();
+            File ficherodd = new File(pathdata+nombredte+".dd");
+            FileWriter fw = new FileWriter(ficherodd);
+        try (BufferedWriter bw = new BufferedWriter(fw)) {
+            bw.write(strDigest);
+        }
+            
+            String cadenadd;
+        FileReader f = new FileReader(pathdata+nombredte+".dd"); 
+	BufferedReader b = new BufferedReader(f); 
+	cadenadd = b.readLine(); 
+		System.out.println(cadenadd); 
+	 
+	b.close();
+        
+        
+        
           
-          String contenidotimbre = objSignTimbre.signTimbre(auxmensaje2,this.pathdata+this.nombredte+".rsa");
-          File fichero = new File(this.pathdata+this.nombredte+".rsa");
+           SignTimbre objSignTimbre = new SignTimbre();
+        
+          
+          String contenidotimbre = objSignTimbre.signTimbre(cadenadd,pathdata+nombredte+".rsa");
+      /*
+          File fichero = new File(pathdata+nombredte+".rsa");
+        */
+          
+          /*
           fichero.delete();
+          */
           
-          
-       Element frmt = doc.createElement("FRMT");
-       frmt.setAttribute("algoritmo", "SHA1withRSA");
-       frmt.setTextContent(contenidotimbre);
+          Element frmt = doc.createElement("FRMT");
+          frmt.setAttribute("algoritmo", "SHA1withRSA");
+          frmt.setTextContent(contenidotimbre);
         
         
         
@@ -274,25 +174,29 @@ public class Timbre{
        	      
          transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "no");
          transformer.setOutputProperty(OutputKeys.INDENT, "no");
-          
+      
         
-           transformer.transform(source, result);
+          transformer.transform(source, result);
 	  System.out.println("Done");
          
     }
     
-  public void leerCaf(String auxrutemisor, String tipodocumento,String pathcaf) throws ParserConfigurationException, SAXException, IOException{
+    
+  public void leerCaf(String auxrutemisor, String tipodocumento,String pathcaf, String pathdata, String nombredte) throws ParserConfigurationException, SAXException, IOException{
         
-        String filepath2 = pathcaf +"F"+auxrutemisor+"T"+tipodocumento+".xml";
+     String filepath2 = pathcaf +"F"+auxrutemisor+"T"+tipodocumento+".xml";
+        
+      
+      FileInputStream archivocaf = new FileInputStream(filepath2);
+      InputStreamReader inputcaf = new InputStreamReader(archivocaf,"ISO-8859-1");
+      InputSource sourcecaf = new InputSource(inputcaf);      
+       
+
+        
+        
+        
+        
 	
-FileInputStream archivodte =new FileInputStream(filepath2);
- InputStreamReader inputcaf = new InputStreamReader(archivodte,"ISO-8859-1");
- InputSource sourcecaf = new InputSource(inputcaf);      
-
-
-
-
-
         DocumentBuilderFactory docFactory2 = DocumentBuilderFactory.newInstance();
 	DocumentBuilder docBuilder2 = docFactory2.newDocumentBuilder();
 	Document doc2 = docBuilder2.parse(sourcecaf);
@@ -347,10 +251,11 @@ FileInputStream archivodte =new FileInputStream(filepath2);
         Element elrsask = (Element) nodorsask.item(0);
         String stringrsask = elrsask.getFirstChild().getNodeValue();
 
-        String nombreArchivo =this.pathdata+this.nombredte+".rsa";
+        String nombreArchivo = pathdata+nombredte+".rsa";
         FileWriter fw = new FileWriter(nombreArchivo);
         BufferedWriter bw = new BufferedWriter(fw);
         byte ptext[] = stringrsask.getBytes();
+        
         String auxtext = new String(ptext,"ISO-8859-1");
         
         try (PrintWriter printtimbre = new PrintWriter(bw)) {
@@ -358,25 +263,10 @@ FileInputStream archivodte =new FileInputStream(filepath2);
             printtimbre.close();
         }
         
-     
+      
   }
-
-
-}
    
-                
-                
-	
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
     
-
-
+                
+                
+}

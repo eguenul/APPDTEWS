@@ -85,13 +85,13 @@ public class Timbre{
                      +"<TD>"+doc.getElementsByTagName("TipoDTE").item(0).getTextContent()+"</TD>"
                      +"<F>"+doc.getElementsByTagName("Folio").item(0).getTextContent()+"</F>"
                      +"<FE>"+doc.getElementsByTagName("FchEmis").item(0).getTextContent()+"</FE>"
-                     +"<RR>"+doc.getElementsByTagName("RUTRecep").item(0).getTextContent()+"</RR>"
+                     +"<RR>"+formatoTimbre(doc.getElementsByTagName("RUTRecep").item(0).getTextContent())+"</RR>"
                      +"<RSR>"+doc.getElementsByTagName("RznSocRecep").item(0).getTextContent()+"</RSR>"
                      +"<MNT>"+doc.getElementsByTagName("MntTotal").item(0).getTextContent()+"</MNT>"
                      +"<IT1>"+doc.getElementsByTagName("NmbItem").item(0).getTextContent()+"</IT1>"      
                      +"<CAF version=\"1.0\">"
                      +"<DA><RE>"+this.rutemisor+"</RE>"
-                     +"<RS>"+this.razonsocial+"</RS>" 
+                     +"<RS>"+formatoTimbre(this.razonsocial)+"</RS>" 
                      +"<TD>"+this.tipodocumento+"</TD>" 
                      +"<RNG>"+"<D>"+this.desde+"</D>"+"<H>"+this.hasta+"</H>"+"</RNG>"
                     +"<FA>"+this.fecha +"</FA>"
@@ -266,6 +266,14 @@ public class Timbre{
       
   }
    
+        
+private String formatoTimbre(String cadena){
+
+ cadena = cadena.replace("&", "&amp;");
+
+return cadena;
+}
+  
     
                 
                 
